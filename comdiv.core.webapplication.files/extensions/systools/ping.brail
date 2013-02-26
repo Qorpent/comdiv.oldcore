@@ -1,0 +1,4 @@
+#pragma boo
+bml :
+	div "status-ping noping", id=zeta_ping_status :
+		img src="${siteroot}/images/ico16.png"

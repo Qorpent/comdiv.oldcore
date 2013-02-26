@@ -1,0 +1,9 @@
+﻿#pragma boo
+import Comdiv.Persistence from Comdiv.Core
+import Comdiv.Model.Interfaces from Comdiv.Core
+defines :
+	p as HqlColumn
+	r as System.Object
+bml :	
+	
+	input "value_checkbox",type="checkbox", editable="${p.Editable}", name="${p.Code}", initial="${p.Property.GetValue(r,null)}"

@@ -1,0 +1,16 @@
+﻿<h1>При выполнении запроса возникла ошибка</h1>
+<strong>За помощью можете обратиться к администраторам приложения</strong>
+<p>Характеристики вашего запроса:</p>
+<table>
+	<tr><td>Зона:</td><td>${area}</td></tr>
+	<tr><td>Контроллер:</td><td>${controller}</td></tr>
+	<tr><td>Действие:</td><td>${action}</td></tr>
+	<tr><td>Переданные параметры:</td><td>${parameters}</td></tr>
+	<tr><td>Ваша учетная запись</td><td>${user}</td></tr>
+</table>
+<a href='${siteroot}/${area}/${controller}/${action}.rails?${parameters}'>Повторить попытку</a>
+
+<div>
+	<h2>Текст ошибки</h2>
+	${System.Text.RegularExpressions.Regex.Replace(exception.ToString(),"[\r\n]+","<br />")}
+</div>

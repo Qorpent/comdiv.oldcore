@@ -1,0 +1,15 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+import Comdiv.Security from Comdiv.Core
+import Comdiv.MAS
+import System.Web
+import Comdiv.MAS.Model.MasExtensions from "Comdiv.MAS" as e
+repo = myapp.resolve[of IMasProcessRepository]()
+try :
+	app = repo.MyApp()
+	checkapp = repo.Storage.Load[of App]("z3adm133")
+	bml :
+		div id="status-current-user", title="${app.Code}":
+			output "${System.Environment.MachineName} ${app.Name}"
+except e :
+	output "${e}"

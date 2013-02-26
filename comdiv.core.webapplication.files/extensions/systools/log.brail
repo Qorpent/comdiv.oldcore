@@ -1,0 +1,12 @@
+﻿#pragma boo
+bml :
+	div style="display:none;":
+		div "zeta_sys_log_div", id=zeta_sys_log_div 
+	span title="Показать журнал" , onclick="zeta.sys.log.show()": "Л"
+	script : """
+		Event.observe(window,'load',function(){
+			zeta.toolbar.register('sb_log_show',function(){
+				zeta.sys.log.show();
+			},'OL');
+		});
+	"""

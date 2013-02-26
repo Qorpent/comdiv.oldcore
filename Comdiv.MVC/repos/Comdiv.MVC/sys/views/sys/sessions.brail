@@ -1,0 +1,40 @@
+﻿<%
+//
+//			ВНИМАНИЕ - ДАННЫЙ VIEW ПОСТАВЛЯЕТСЯ В СОСТАВЕ БИБЛИОТЕКИ КОНТРОЛЛЕРА
+//			ВНЕСЕННЫЕ ВАМИ ИЗМЕНЕНИЯ БУДУТ ПОТЕРЯНЫ В СЛУЧАЕ ПЕРЕУСТАНОВКИ БИБЛИОТЕКИ
+//			ИЛИ ОБНОВЛЕНИЯ	
+import Comdiv from "Comdiv.dll"
+import Comdiv.__Extensions as ex
+%>
+<style type="text/css">
+	table{border-collapse:collapse}
+	td{border:solid 1px black; padding:5px;}
+	tr.valid_false td
+	{
+		background-color:Gray;
+	}
+	
+</style>
+<h1>Сессии</h1>
+<table>	
+	<thead>
+		<tr>
+		    <th>Код</th>
+			<th>Владелец</th>
+			<th>Живая</th>
+			<th>Лицензия</th>
+			<th>Цель</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<%for s in sessions: %>
+	        <tr class="valid_${s.Lease.IsValid}">
+	            <td>${s.Key}</td>
+	            <td>${s.Owner}</td>
+	            <td>${s.Lease.IsValid}</td>
+	            <td>${s.Lease}</td>
+	            <td>${s.Target}</td>
+	        </tr>
+        <%end %>
+	</tbody>
+</table>

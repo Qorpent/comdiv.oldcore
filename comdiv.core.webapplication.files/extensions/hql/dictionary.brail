@@ -1,0 +1,56 @@
+﻿#pragma boo
+import Comdiv.Persistence from Comdiv.Core
+import Comdiv.Model.Interfaces from Comdiv.Core
+defines :
+	p as HqlColumn
+	r as System.Object
+	type as string
+bml :	
+	try :
+		txt = p.Property.GetValue(r,null) as string
+		pval = txt
+		if not txt :
+			txt = ""
+		else :
+			txt = p.GetCurrentDictList(txt,"<br/>")
+		span id="${p.Code}_${r.Id}"  :
+			span id="${p.Code}_${r.Id}_visible" :
+				if txt.Length == 0 :
+					output "..."
+				else :
+					output "${txt}"
+			span id="${p.Code}_${r.Id}_internal", style="display:none" :
+				output pval
+		script : """
+			Event.observe($('${p.Code}_${r.Id}').up(),'click',function(){
+				new comdiv.modal.dialog({
+					title : 'Править поле',
+					action : 'hql/dexecute',
+					onApply :  function(dialog){
+						result = '/';
+						result2 = '';
+						checks = $$('.dictcheck');
+						checks.each(function(c){
+							if(c.checked){
+								result += c.value + '/';
+								result2 += '<span title=\''+c.value+'\'>'+ c.name+'</span><br/>';
+							}
+						});
+						zeta.hql.update('${type}','${r.Id}','${p.Code}',result,function(){
+							$('${p.Code}_${r.Id}_internal').update(result);
+							$('${p.Code}_${r.Id}_visible').update(result2);
+						});
+					},
+					parameters : {
+						system : '${p.System}',
+						current : $('${p.Code}_${r.Id}_internal').innerHTML,
+						query : "${p.Dictionary}",
+					},
+				});
+			});
+			$('${p.Code}_${r.Id}').up().customedit=true;
+		"""
+	except e:
+		output "error"
+		span style="display:none":
+			output e.ToString()

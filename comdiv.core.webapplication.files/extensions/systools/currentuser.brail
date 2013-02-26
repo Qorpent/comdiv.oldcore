@@ -1,0 +1,8 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+import Comdiv.Security from Comdiv.Core
+record = UserRecordRepository().Get(myapp.usrName)
+bml :
+	
+	div id="status-current-user", title="${myapp.usrName}", isadmin="${isinrole('ADMIN')}" :
+		output "${record.Name} (${record.Domain})"

@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F98630A4-7DB8-4E28-9E97-4D01F9C53F87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comdiv.Framework</RootNamespace>
+    <AssemblyName>Comdiv.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TOTALTEST|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LIB2</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)'=='MIGRATION'">
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\exras\lib\\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Framework">
+      <HintPath>..\..\exras\lib\\Castle.MonoRail.Framework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Castle.MonoRail.WindsorExtension">
+      <HintPath>..\..\exras\lib\\Castle.MonoRail.WindsorExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\exras\lib\\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\exras\lib\\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'!='MIGRATION'">
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\exras\lib\\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Framework">
+      <HintPath>..\..\exras\lib\\Castle.MonoRail.Framework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Castle.MonoRail.WindsorExtension">
+      <HintPath>..\..\exras\lib\\Castle.MonoRail.WindsorExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\exras\lib\\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\exras\lib\\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\AppRestartTimer.cs" />
+    <Compile Include="Application\BxlWidgetRepository.cs" />
+    <Compile Include="Application\Interceptors\ApplicationLifecycleLogger.cs" />
+    <Compile Include="Application\Interceptors\RequestTimeStamper.cs" />
+    <Compile Include="Application\Interceptors\UserEntranceInterceptor.cs" />
+    <Compile Include="Application\MonoRailApplication.cs" />
+    <Compile Include="Application\Interceptors\UserDataLoadAndSaveInterceptor.cs" />
+    <Compile Include="Authorization\AdminAttribute.cs" />
+    <Compile Include="Authorization\NotAuthorizedController.cs" />
+    <Compile Include="Authorization\PublicAttribute.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Authorization\ControllerAuthorizationException.cs" />
+    <Compile Include="Framework\ComdivExMacro\QuickAttribute.cs" />
+    <Compile Include="Framework\ProfileRepository.cs" />
+    <Compile Include="IO\BxlScriptExecutor.cs" />
+    <Compile Include="Controllers\ExtensionBaseController.cs" />
+    <Compile Include="Controllers\ControllerResourceHelper.cs" />
+    <Compile Include="Controllers\ExtInstallerController.cs" />
+    <Compile Include="Controllers\FileManagerController.cs" />
+    <Compile Include="Controllers\FirstRunController.cs" />
+    <Compile Include="Controllers\HqlColumnLoader.cs" />
+    <Compile Include="Controllers\HqlController.cs" />
+    <Compile Include="Controllers\OutputSelectionFilter.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\RescueController.cs" />
+    <Compile Include="Controllers\RestartController.cs" />
+    <Compile Include="Controllers\SqlController.cs" />
+    <Compile Include="Controllers\SysInfoController.cs" />
+    <Compile Include="Authorization\AuthorizeFilter.cs" />
+    <Compile Include="Controllers\WikiController.cs" />
+    <Compile Include="Extensions\ExtensionDescriptor.cs" />
+    <Compile Include="Extensions\ExtensionsEnumerator.cs" />
+    <Compile Include="Framework\ComdivExMacro\ControllerAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\EchoController.cs" />
+    <Compile Include="Quick\BooViewEngineAdapterForQWeb.cs" />
+    <Compile Include="Quick\ComdivQWebPricipalSource.cs" />
+    <Compile Include="Quick\ComdivQWebRoleResolver.cs" />
+    <Compile Include="Quick\OldAssoiTypeLocator.cs" />
+    <Compile Include="Quick\QuickInstaller.cs" />
+    <Compile Include="Quick\WikiRender.cs" />
+    <Compile Include="Security\ImpersonateController.cs" />
+    <Compile Include="Security\RoleController.cs" />
+    <Compile Include="Security\RoleOperator.cs" />
+    <Compile Include="Security\SecurityQWebApi\BxlRoleApplyer.cs" />
+    <Compile Include="Security\SecurityQWebApi\ClassicXmlRoleApplyer.cs" />
+    <Compile Include="Security\SecurityQWebApi\IRoleApplyer.cs" />
+    <Compile Include="Security\SecurityQWebApi\RoleApplyer.cs" />
+    <Compile Include="Security\SecurityQWebApi\RolesActionBase.cs" />
+    <Compile Include="Security\SecurityQWebApi\RolesActionException.cs" />
+    <Compile Include="Security\SecurityQWebApi\RolesAddRoleAction.cs" />
+    <Compile Include="Security\SecurityQWebApi\RolesGetMassStateAction.cs" />
+    <Compile Include="Security\SecurityQWebApi\RolesGetMatrixAction.cs" />
+    <Compile Include="Security\SecurityQWebApi\RolesGetStateAction.cs" />
+    <Compile Include="Security\SecurityQWebApi\RolesRemoveRoleAction.cs" />
+    <Compile Include="Security\SecurityQWebApi\UserRoleMap.cs" />
+    <Compile Include="Utils\JsonStringExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Bxl\Qorpent.Bxl.csproj">
+      <Project>{381dec86-5709-4a64-bd9f-462e792884ce}</Project>
+      <Name>Qorpent.Bxl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Core\Qorpent.Core.csproj">
+      <Project>{880f65ea-1a22-4672-a137-ffc91290a209}</Project>
+      <Name>Qorpent.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Dsl\Qorpent.Dsl.csproj">
+      <Project>{b758e220-22f5-47df-a73b-bc9b1a3dbdc3}</Project>
+      <Name>Qorpent.Dsl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.IoC\Qorpent.IoC.csproj">
+      <Project>{62f22ffa-a1cf-4a74-838c-9ab33a9442ea}</Project>
+      <Name>Qorpent.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.IO\Qorpent.IO.csproj">
+      <Project>{426c92df-3c40-426c-b0be-40a1df9044c2}</Project>
+      <Name>Qorpent.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Mvc\Qorpent.Mvc.csproj">
+      <Project>{96885c8f-ad20-41b4-86ee-bc9b3d47d9f9}</Project>
+      <Name>Qorpent.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Security\Qorpent.Security.csproj">
+      <Project>{ecb429bc-3e76-4fcd-897e-235b546c8738}</Project>
+      <Name>Qorpent.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Serialization\Qorpent.Serialization.csproj">
+      <Project>{21971F28-8ED8-4F50-B623-E9DB2658AF54}</Project>
+      <Name>Qorpent.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Utils\Qorpent.Utils.csproj">
+      <Project>{880f65ea-1a22-4672-a137-ffc912902112}</Project>
+      <Name>Qorpent.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Castle.MonoRail.Views.Brail\Castle.MonoRail.Views.Brail.csproj">
+      <Project>{CC39D6D0-2467-4DD5-A53E-92D580B60038}</Project>
+      <Name>Castle.MonoRail.Views.Brail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Dependency\Comdiv.Dependency.csproj">
+      <Project>{6E58C87C-2522-4AA5-9211-6109305B2D7B}</Project>
+      <Name>Comdiv.Dependency</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Extensibility\Comdiv.Extensibility.csproj">
+      <Project>{C1944938-B798-478A-BA1C-FDA8BA152FF3}</Project>
+      <Name>Comdiv.Extensibility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Binding\" />
+    <Folder Include="Themas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir  $(TargetDir)..\artifacts &amp; xcopy $(TargetPath)  $(TargetDir)..\artifacts /s/d/y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

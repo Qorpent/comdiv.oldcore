@@ -1,0 +1,14 @@
+﻿#pragma boo
+import System
+import Comdiv.Persistence from Comdiv.Core
+import Comdiv.Model.Interfaces from Comdiv.Core
+defines :
+	p as HqlColumn
+	r as System.Object
+bml :	
+	t as System.Type = p.Property.PropertyType
+	names = Enum.GetNames(t)
+	select "value_select", editable="${p.Editable}", name="${p.Name}", initial="${p.Property.GetValue(r,null)}" :
+		for n in names :
+			option value="${n}" :
+				output "${n}"

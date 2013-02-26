@@ -1,0 +1,8 @@
+﻿name : "Расширение к textarea"
+description : """
+	Расширение которое к textarea лепит номера строк
+"""
+index
+version : "0.1.0"
+secutity : "Общее"
+target : "Разработка"

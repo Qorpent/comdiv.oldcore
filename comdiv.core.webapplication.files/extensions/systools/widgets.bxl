@@ -1,0 +1,41 @@
+﻿tab info, "Информация", comment="Разделы, предназначенные для вывода информации" 
+tab sys, "Система", comment="Системные команды, вызов системных приложений" 
+tab tools, "Инструменты", comment="Дополнительные приложения для выполнения задач" 
+
+
+resources idx=-1000 : "systools"
+button tools_extinstaller, "Расширения", comment="Менеджер расширений системы", image="systools/extinstaller", roles="ADMIN" : """
+	window.open(Ajax.siteroot+'/extinstaller/index.rails?_layout=default', '_blank');
+"""
+
+button sys_extinstaller_reinstall, "Переустановить", comment="Переустановка всех расширений и очистка приложения", image="systools/reinstall", roles="ADMIN" : """
+	zeta.sys.shortResult.request('extinstaller','install');
+	zeta.sys.shortResult.request('restart','reload');
+
+"""
+
+button sys_core_security , "Управление пользователями и ролями", comment="Небольшая консоль для быстрой проверки статуса пользователя, его ролей и установки ролей", view="/systools/security", roles="ADMIN"
+
+button sys_core_security_deimpersonate , "Вернуться", comment="Вернуться к своей учетной записи",image="systools/return", roles="IMPERSONATED" : """
+	Ajax.from('impersonate','leave').after(function(){document.location=document.location;}).call();
+"""
+
+
+
+
+button sys_clear , "Очистка", comment="Очистка кэшей, фактическая перезагрузка приложения без перезапуска IIS", image="systools/clear", quick="RL", roles="ADMIN" : "zeta.sys.shortResult.request('restart','reload')"
+
+button sys_restart , "Перезагрузка", comment="Перезапуск IIS, рекомендуется только в аварийных случаях", image="systools/restart", quick="RS", roles="ADMIN" : "zeta.sys.shortResult.request('restart','restart')"
+
+
+widget status_ajax , "Индикация AJAX-запросов", view="/systools/ajaxstatus", position=statusbar
+widget status_ping , "Индикатор доступности", comment="Проверка доступности системы зеленый - да, красный - нет, желтый - не проверено(по умолчанию каждые 10 минут, нажмите, чтобы проверить немедленно)",  view="/systools/ping", position=statusbar
+
+widget status_shortinfo , "Панель для кратких результатов", view="/systools/shortresult", position=statusbar
+widget status_shortinfo , "Панель лога", view="/systools/log", position=statusbar
+widget status_copyright , "Копирайт", specclass=right, view="/systools/copyright", position=statusbar, idx=5
+widget status_currentuser , "Текущий пользователь", specclass=right, view="/systools/currentuser", position=statusbar, idx=10
+widget status_selfapp , "Текущее приложение", specclass=right, view="/systools/currentapp", position=statusbar, idx=10
+
+
+

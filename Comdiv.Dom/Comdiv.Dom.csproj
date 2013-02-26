@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FDA671A-1288-4F13-8396-3AD189EA3D7C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comdiv.Dom</RootNamespace>
+    <AssemblyName>Comdiv.Dom</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\MIGRATION\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAnyContent.cs" />
+    <Compile Include="Abstract\ICell.cs" />
+    <Compile Include="Abstract\ICellCollection.cs" />
+    <Compile Include="Abstract\IListItem.cs" />
+    <Compile Include="Abstract\IListNode.cs" />
+    <Compile Include="Abstract\INode.cs" />
+    <Compile Include="Abstract\IPage.cs" />
+    <Compile Include="Abstract\IRef.cs" />
+    <Compile Include="Abstract\IRow.cs" />
+    <Compile Include="Abstract\IRowCollection.cs" />
+    <Compile Include="Abstract\ITable.cs" />
+    <Compile Include="Abstract\ITableColumn.cs" />
+    <Compile Include="Abstract\ITableColumnSet.cs" />
+    <Compile Include="Abstract\ITableRowSet.cs" />
+    <Compile Include="Abstract\IView.cs" />
+    <Compile Include="Collections\CellCollection.cs" />
+    <Compile Include="Collections\ClassesCollection.cs" />
+    <Compile Include="Collections\NodeCollectionBase.cs" />
+    <Compile Include="Collections\NodesCollection.cs" />
+    <Compile Include="Collections\RowCollection.cs" />
+    <Compile Include="Collections\TableColumnsCollection.cs" />
+    <Compile Include="Collections\UniqueList.cs" />
+    <Compile Include="Consts.cs" />
+    <Compile Include="Elements\AnyContent.cs" />
+    <Compile Include="Elements\Cell.cs" />
+    <Compile Include="Elements\DomHtmlExtensions.cs" />
+    <Compile Include="Elements\Header.cs" />
+    <Compile Include="Elements\Img.cs" />
+    <Compile Include="Elements\List.cs" />
+    <Compile Include="Elements\ListItem.cs" />
+    <Compile Include="Elements\Node.cs" />
+    <Compile Include="Elements\Page.cs" />
+    <Compile Include="Elements\Ref.cs" />
+    <Compile Include="Elements\Row.cs" />
+    <Compile Include="Elements\Stub.cs" />
+    <Compile Include="Elements\Table - table merging.cs" />
+    <Compile Include="Elements\Table.cs" />
+    <Compile Include="Elements\TableColumnSet.cs" />
+    <Compile Include="Elements\TableRowSet.cs" />
+    <Compile Include="Elements\Text.cs" />
+    <Compile Include="Elements\View.cs" />
+    <Compile Include="Elements\ViewRow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

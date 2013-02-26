@@ -1,0 +1,24 @@
+﻿<%
+if IsDefined('partitions'): 
+    if(IsDefined('groupStart')):
+        OutputStream.Write(groupStart)
+    end
+    for p in partitions: 
+        if IsDefined('role'):
+            if p.Role.ToUpper() != role.ToUpper():
+                continue
+            end
+        end
+        if(IsDefined('itemStart')):
+            OutputStream.Write(itemStart)
+        end
+        p.Render(self)
+        if(IsDefined('itemEnd')):
+            OutputStream.Write(itemEnd)
+        end
+    end
+    if(IsDefined('groupEnd')):
+        OutputStream.Write(groupEnd)
+    end
+end
+%>

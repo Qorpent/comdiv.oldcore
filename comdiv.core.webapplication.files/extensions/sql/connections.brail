@@ -1,0 +1,6 @@
+﻿#pragma boo
+defines :
+	connections as (string)
+bml:
+	for c in connections :
+		option : "${c.Trim()}"

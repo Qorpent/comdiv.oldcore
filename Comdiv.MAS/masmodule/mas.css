@@ -1,0 +1,20 @@
+﻿div.processstate {
+	float:left;
+	width:16px;
+	height:16px;
+	background : url('error.gif') center center no-repeat;
+	margin-left:3px;
+}
+
+div.processstate[state='-100'] {
+	background : url('wait.gif') center center no-repeat;
+}
+div.processstate[state='-10'] {
+	background : url('execute.gif') center center no-repeat;
+}
+div.processstate[state='0'] {
+	background : url('ok.png') center center no-repeat;
+}
+div.processstate[state='2'] {
+	background : url('double.png') center center no-repeat;
+}

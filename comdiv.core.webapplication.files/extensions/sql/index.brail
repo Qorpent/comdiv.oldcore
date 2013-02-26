@@ -1,0 +1,5 @@
+﻿#pragma boo
+bml:
+	div sql :
+		textarea "extended", id=sql_query
+		div id=sql_result

@@ -1,0 +1,9 @@
+table.extensions_table tr.extension.installed_True td {
+	background-color: #ecffec;
+	border-bottom: dotted 1px #00aa00;
+}
+
+table.extensions_table tr.extension.installed_False td {
+	background-color: #ffecec;
+	border-bottom: dotted 1px #ff4646;
+}

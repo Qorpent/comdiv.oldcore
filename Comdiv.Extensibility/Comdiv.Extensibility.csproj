@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1944938-B798-478A-BA1C-FDA8BA152FF3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comdiv.Extensibility</RootNamespace>
+    <AssemblyName>Comdiv.Extensibility</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LIB2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'IAS|AnyCPU' ">
+    <OutputPath>..\..\build\</OutputPath>
+    <DebugType>none</DebugType>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TOTALTEST|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\mbuild\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LIB2</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>comdiv.core.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)'=='MIGRATION'">
+    <Reference Include="System.Web" />
+    <Reference Include="Boo.Lang.Extensions">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Boo.Lang.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Interpreter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Boo.Lang.Interpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Microsoft.Scripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="IronPython">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'!='MIGRATION'">
+    <Reference Include="Boo.Lang.Extensions">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Interpreter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Interpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Microsoft.Scripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="IronPython">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnyKeyMacro.cs" />
+    <Compile Include="BooDSLRunner.cs" />
+    <Compile Include="BooEval.cs" />
+    <Compile Include="BooExtensions.cs" />
+    <Compile Include="Booxml\ApplyGlobalsAndSubstitutionsStep.cs" />
+    <Compile Include="Booxml\AssignsAreAttributes.cs" />
+    <Compile Include="Booxml\AssignsLiteralsAsTextStep.cs" />
+    <Compile Include="Booxml\BooxmlExtensions.cs" />
+    <Compile Include="Booxml\BooxmlGenerator.cs" />
+    <Compile Include="Booxml\BooxmlMacroVisitorBase.cs" />
+    <Compile Include="Booxml\BooxmlParser.cs" />
+    <Compile Include="Booxml\BooxmlPipeline.cs" />
+    <Compile Include="Booxml\BooxmlPreprocessor.cs" />
+    <Compile Include="Booxml\BooxmlUtils.cs" />
+    <Compile Include="Booxml\BooxmlXmlCollector.cs" />
+    <Compile Include="Booxml\DefaultAttributesStep.cs" />
+    <Compile Include="Booxml\MacroAsElementStep.cs" />
+    <Compile Include="Booxml\PrintXmlStep.cs" />
+    <Compile Include="Booxml\Substitution.cs" />
+    <Compile Include="Brail\Bml\BmlElementMacro.cs" />
+    <Compile Include="Brail\Bml\BmlMacro.cs" />
+    <Compile Include="Brail\COMPILATION\BrailCompilerException.cs" />
+    <Compile Include="Brail\COMPILATION\InterpolationUnescapeStep.cs" />
+    <Compile Include="Brail\COMPILATION\IViewCompiler.cs" />
+    <Compile Include="Brail\COMPILATION\OutputWriteUnification.cs" />
+    <Compile Include="Brail\COMPILATION\ViewCompiler.cs" />
+    <Compile Include="Brail\FRAMEWORK\BrailSourceResolver.cs" />
+    <Compile Include="Brail\FRAMEWORK\CompiledViewTypeItem.cs" />
+    <Compile Include="Brail\FRAMEWORK\LeveledFileWatcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Brail\FRAMEWORK\TimeStampAttribute.cs" />
+    <Compile Include="Brail\FRAMEWORK\ViewCodeSource.cs" />
+    <Compile Include="Brail\FRAMEWORK\ViewSourceResolverBase.cs" />
+    <Compile Include="Brail\FRAMEWORK\ViewTypeFactory.cs" />
+    <Compile Include="Brail\PreprocessorFactory.cs" />
+    <Compile Include="Brail\ViewEngineOptions.cs" />
+    <Compile Include="Brail\COMPILATION\ViewCompilerInfo.cs" />
+    <Compile Include="Brail\COMPILATION\BrailRenamerAndTimeStamper.cs" />
+    <Compile Include="Brail\COMPILATION\ExpandBmlStep.cs" />
+    <Compile Include="Brail\BrailBaseCommon.cs" />
+    <Compile Include="Brail\BrailBuildingHelper.cs" />
+    <Compile Include="Brail\BrailConfigurationSectionBase.cs" />
+    <Compile Include="Brail\BrailPreprocessorBase.cs" />
+    <Compile Include="Brail\COMPILATION\BrailCompiler.cs" />
+    <Compile Include="Brail\COMPILATION\BrailPreProcessor.cs" />
+    <Compile Include="Brail\COMPILATION\CustomTypeSystem.cs" />
+    <Compile Include="Brail\COMPILATION\ExpandDuckTypedExpressions_WorkaroundForDuplicateVirtualMethods.cs" />
+    <Compile Include="Brail\COMPILATION\FixTryGetParameterConditionalChecks.cs" />
+    <Compile Include="Brail\COMPILATION\WSAHelper.cs" />
+    <Compile Include="Brail\COMPILATION\WSAIgnoranceParsingStep.cs" />
+    <Compile Include="Brail\FOREACH\AfterallMacro.cs" />
+    <Compile Include="Brail\FOREACH\AftereachMacro.cs" />
+    <Compile Include="Brail\FOREACH\AsolistMacro.cs" />
+    <Compile Include="Brail\FOREACH\AsparsMacro.cs" />
+    <Compile Include="Brail\FOREACH\AsrowsMacro.cs" />
+    <Compile Include="Brail\FOREACH\AsselectMacro.cs" />
+    <Compile Include="Brail\FOREACH\AstableMacro.cs" />
+    <Compile Include="Brail\FOREACH\AstablerowsMacro.cs" />
+    <Compile Include="Brail\FOREACH\AsulistMacro.cs" />
+    <Compile Include="Brail\FOREACH\BeforeallMacro.cs" />
+    <Compile Include="Brail\FOREACH\BeforeeachMacro.cs" />
+    <Compile Include="Brail\FOREACH\BetweenMacro.cs" />
+    <Compile Include="Brail\FOREACH\CellMacro.cs" />
+    <Compile Include="Brail\FOREACH\CellMacroBase.cs" />
+    <Compile Include="Brail\FOREACH\CellsMacro.cs" />
+    <Compile Include="Brail\FOREACH\ForeachMacro.cs" />
+    <Compile Include="Brail\FOREACH\ForeachSnippet.cs" />
+    <Compile Include="Brail\FOREACH\HeadMacro.cs" />
+    <Compile Include="Brail\FOREACH\HeadsMacro.cs" />
+    <Compile Include="Brail\FOREACH\OnemptyMacro.cs" />
+    <Compile Include="Brail\FOREACH\OnerrorMacro.cs" />
+    <Compile Include="Brail\FOREACH\OnitemMacro.cs" />
+    <Compile Include="Brail\FOREACH\PrepareMacro.cs" />
+    <Compile Include="Brail\COMPILATION\IBrailPreprocessor.cs" />
+    <Compile Include="Brail\Bml\TemplateBindVisitor.cs" />
+    <Compile Include="Brail\CellDefinition.cs" />
+    <Compile Include="Brail\COMPILATION\IgnoreNull.cs" />
+    <Compile Include="Brail\IBooViewEngine.cs" />
+    <Compile Include="Brail\IBrailPreprocessorFactory.cs" />
+    <Compile Include="Brail\MACROSES\CachekeyMacro.cs" />
+    <Compile Include="Brail\MACROSES\CallMacro.cs" />
+    <Compile Include="Brail\MACROSES\CatchMacro.cs" />
+    <Compile Include="Brail\MACROSES\DefinebrailpropertyMacro.cs" />
+    <Compile Include="Brail\MACROSES\DefinesMacro.cs" />
+    <Compile Include="Brail\MACROSES\ExportMacro.cs" />
+    <Compile Include="Brail\MACROSES\OutputlMacro.cs" />
+    <Compile Include="Brail\MACROSES\OutputMacro.cs" />
+    <Compile Include="Brail\MACROSES\SubMacro.cs" />
+    <Compile Include="Brail\COMPILATION\ReplaceUknownWithParameters.cs" />
+    <Compile Include="Brail\COMPILATION\TransformToBrailStep.cs" />
+    <Compile Include="ClassicDefaultApplicationScriptMachine.cs" />
+    <Compile Include="CommonDataMacro.cs" />
+    <Compile Include="CompilerErrorException.cs" />
+    <Compile Include="Dsl\BooBasedCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\CompileDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\DirectoryBasedDynamicBooAssemblyProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\DslAstUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\FileBasedBooSourceProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\IAssemblyProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\IBooCompilerPipelineModifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\IBooSourceProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\ICompileDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\ICompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\IOrdered.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\ISourceProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\MethodUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\SimpleAssemblyProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\SimpleSourceProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dsl\Variable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExtensionsCompiler\ExtensionsCompilerExecutor.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsCompilerConsoleProgram.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsCompilerConsoleProgramArgs.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsCompilerConsoleProgramArgsConverter.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsPreprocessor.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsPreprocessorCompilerStep.cs" />
+    <Compile Include="IConditionMatcher.cs" />
+    <Compile Include="IDefaultScriptMachine.cs" />
+    <Compile Include="IExtensionInstaller.cs" />
+    <Compile Include="IncludeastMacro.cs" />
+    <Compile Include="IncludeAstMacroExpandStep.cs" />
+    <Compile Include="Interpreter.cs" />
+    <Compile Include="IRootBasedExpressionEvaluator.cs" />
+    <Compile Include="MacroCache.cs" />
+    <Compile Include="Metas.cs" />
+    <Compile Include="NameUtil.cs" />
+    <Compile Include="PythonPool.cs" />
+    <Compile Include="RootBasedExpressionEvaluatorBase.cs" />
+    <Compile Include="ScriptMachine.cs" />
+    <Compile Include="SetupDefaultNamespacesAndReferencesStep.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Bxl\Qorpent.Bxl.csproj">
+      <Project>{381DEC86-5709-4A64-BD9F-462E792884CE}</Project>
+      <Name>Qorpent.Bxl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Core\Qorpent.Core.csproj">
+      <Project>{880F65EA-1A22-4672-A137-FFC91290A209}</Project>
+      <Name>Qorpent.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Brail\FRAMEWORK\.svn\all-wcprops" />
+    <None Include="Brail\FRAMEWORK\.svn\entries" />
+    <None Include="Brail\FRAMEWORK\.svn\text-base\BrailSourceResolver.cs.svn-base" />
+    <None Include="Brail\FRAMEWORK\.svn\text-base\CompiledViewTypeItem.cs.svn-base" />
+    <None Include="Brail\FRAMEWORK\.svn\text-base\LeveledFileWatcher.cs.svn-base" />
+    <None Include="Brail\FRAMEWORK\.svn\text-base\TimeStampAttribute.cs.svn-base" />
+    <None Include="Brail\FRAMEWORK\.svn\text-base\ViewCodeSource.cs.svn-base" />
+    <None Include="Brail\FRAMEWORK\.svn\text-base\ViewSourceResolverBase.cs.svn-base" />
+    <None Include="Brail\FRAMEWORK\.svn\text-base\ViewTypeFactory.cs.svn-base" />
+    <None Include="comdiv.core.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Brail\FRAMEWORK\.svn\prop-base\" />
+    <Folder Include="Brail\FRAMEWORK\.svn\props\" />
+    <Folder Include="Brail\FRAMEWORK\.svn\tmp\prop-base\" />
+    <Folder Include="Brail\FRAMEWORK\.svn\tmp\props\" />
+    <Folder Include="Brail\FRAMEWORK\.svn\tmp\text-base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MONO|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>mkdir  $(TargetDir)..\artifacts &amp; xcopy $(TargetPath)  $(TargetDir)..\artifacts /s/d/y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

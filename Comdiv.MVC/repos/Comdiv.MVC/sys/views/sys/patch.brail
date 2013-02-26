@@ -1,0 +1,33 @@
+﻿<h1>Патчи</h1>
+<p>
+  <a href="?reinstall=true">Переустановить все</a>
+</p>
+
+<table>	
+	<thead>
+	<tr>
+		<th>Код</th>
+		<th>Комментарий</th>
+		<th>Автопатч</th>
+		<th>Установлен</th>
+		<th>Зависимости</th>
+		<th>Команды<th>
+	</tr>
+	</thead>
+	<tbody>
+		<%for p in patches:%>
+			<tr>
+				<td>${p.Code}</td>
+				<td>${p.Comment}</td>
+				<td>${p.AutoLoad}</td>
+				<td>${p.IsInstalled}</td>
+				<td>${p.Dependencies}</td>
+				<td>
+					<%if not p.IsInstalled:%>
+						<a href="${siteroot}/sys/patch.rails?patchCode=${p.Code}">установить</a>
+					<%end%>
+				</td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>

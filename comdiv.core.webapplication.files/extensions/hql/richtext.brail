@@ -1,0 +1,38 @@
+﻿#pragma boo
+import Comdiv.Persistence from Comdiv.Core
+import Comdiv.Model.Interfaces from Comdiv.Core
+defines :
+	p as HqlColumn
+	r as System.Object
+	type as string
+bml :
+	try :
+		txt = p.Property.GetValue(r,null) as string
+		if not txt :
+			txt = ""	
+		txt = txt.Replace('"','&quot;').Replace("<","&lt;").Replace(">","&gt;")
+		span id="${p.Code}_${r.Id}"  :
+			span id="${p.Code}_${r.Id}_visible", title="${txt}" :
+				if txt.Length > 30 :
+					output "${txt.Substring(0,30)}..."
+				elif txt.Length == 0 :
+					output "..."
+				else :
+					output "${txt}"
+			span id="${p.Code}_${r.Id}_internal", style="display:none" :
+				output txt
+		script : """
+			Event.observe($('${p.Code}_${r.Id}').up(),'click',function(){
+				comdiv.modal.prompt('Править текст',function(result){
+					zeta.hql.update('${type}','${r.Id}','${p.Code}',result,function(){
+						$('${p.Code}_${r.Id}_internal').update(result);
+						$('${p.Code}_${r.Id}_visible').update(result.substring(0,30)+'...');
+					});
+				},$('${p.Code}_${r.Id}_internal').textContent, true,true);
+			});
+			$('${p.Code}_${r.Id}').up().customedit=true;
+		"""
+	except e:
+		output "error"
+		span style="display:none":
+			output e.ToString()

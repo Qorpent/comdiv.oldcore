@@ -1,0 +1,15 @@
+﻿#pragma boo
+import Comdiv.Model.Interfaces from Comdiv.Core
+defines :
+	result as (System.Object)
+	usecodes as bool
+bml :
+	ul :
+		for i in result :	
+			ided = i as IWithId
+			named = i as IWithName
+			coded = i as IWithCode
+			txt = "${named.Name}"
+			if usecodes :
+				txt = "[${coded.Code}] - ${txt}"
+			li itemid="${ided.Id}", itemcode="${coded.Code}", itemname="${named.Name}" : "${txt}"

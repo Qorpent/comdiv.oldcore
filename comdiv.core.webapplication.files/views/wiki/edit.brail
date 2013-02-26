@@ -1,0 +1,39 @@
+﻿#pragma boo
+import System from "System.Core"
+import Comdiv.Reporting
+import Comdiv.Wiki from Comdiv.Core
+defines :
+	code as string
+	level as string
+	page as WikiPage
+#prepare new "news"
+content = ""
+if page :
+	content = page.Content
+bml :
+	script : """
+		function ___send__form(){
+			if(Editor){
+				$('editor').value =  Editor.getEditor().getEditorHTML();
+			}
+			$('new_form').submit();
+		}
+	"""
+	h1 : "Править статью ${code} "
+	input type=button, value="Создать/обновить", onclick="___send__form()"
+	form id=new_form,action= "${siteroot}/wiki/set.rails",method=post :
+		input type=hidden,name= "code", value = "${code}"
+		input type=hidden,name= "level", value = "${level}"
+		input type=hidden,name= "returl", value="${siteroot}/wiki/edit.rails?code=${code}&level=${level}&asworkspace=1"
+		
+		textarea id=editor,name=content, cols=100, rows=20:
+			output content
+		script : """
+			var Editor = Editor ? Editor : null;
+			if(Editor){
+				Editor.recreate('100%','450px');
+			}
+		"""
+		br
+		input type=button, value="Создать/обновить", onclick="___send__form()"
+		

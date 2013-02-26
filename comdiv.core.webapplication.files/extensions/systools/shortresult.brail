@@ -1,0 +1,3 @@
+#pragma boo
+bml :
+	div "status-short-result", id="status-short-result", style="margin-top: -1px;"

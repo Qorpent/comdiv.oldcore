@@ -1,0 +1,13 @@
+﻿<%
+defines :
+	result as (string)
+end
+controller.Response.ContentType = 'application/json'
+%>
+{
+	files : [
+		<%for f in result :%>
+			'${f}',
+		<%end%>
+	],
+}

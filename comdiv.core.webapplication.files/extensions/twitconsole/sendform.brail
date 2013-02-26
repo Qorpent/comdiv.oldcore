@@ -1,0 +1,6 @@
+﻿#pragma boo
+bml :
+	div "twitter-send-form", id="twitter-send-form" :
+		input "twitter-send-input", id="twitter_console_send_text"
+		input id="twitter-send-button", type="button", value="→", style="padding: 0px;"
+		input id="twitter-history-button", type="button", value="H", style="padding: 0px;"

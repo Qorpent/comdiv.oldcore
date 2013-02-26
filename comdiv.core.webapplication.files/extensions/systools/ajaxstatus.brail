@@ -1,0 +1,4 @@
+#pragma boo
+bml :
+	div "zeta_ajax_status inactive", id=zeta_ajax_status :
+		img src="${siteroot}/images/ico16.png"

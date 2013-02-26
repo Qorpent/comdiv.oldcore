@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8EAB56F8-E7C0-44D8-808E-D5C2259AAB8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comdiv.MVC</RootNamespace>
+    <AssemblyName>Comdiv.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <CodePage>1251</CodePage>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OPTIMIZED __CATCH_PROBLEM LIB2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\MIGRATION\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OPTIMIZED __CATCH_PROBLEM LIB2</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang, Version=2.0.9.1, Culture=neutral, PublicKeyToken=32c39770e9a21a67">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler, Version=2.0.9.1, Culture=neutral, PublicKeyToken=32c39770e9a21a67">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Interpreter, Version=2.0.9.1, Culture=neutral, PublicKeyToken=32c39770e9a21a67">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Interpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser, Version=2.0.9.1, Culture=neutral, PublicKeyToken=32c39770e9a21a67">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Binder, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Castle.Components.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Framework, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Castle.MonoRail.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.WindsorExtension, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Castle.MonoRail.WindsorExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Comdiv.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\zeta\themacompiler\bin\Debug\Comdiv.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=0.1.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=0.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Core, Version=0.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Microsoft.Scripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Qorpent.Bxl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9b7e542f177f0300, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\build\Qorpent.Bxl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="IronPython, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\WindowsBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractCacheLease.cs" />
+    <Compile Include="AclModel.cs" />
+    <Compile Include="AclRuleEntity.cs" />
+    <Compile Include="AclRuleEntityMap.cs" />
+    <Compile Include="ApplicationCacheBase.cs" />
+    <Compile Include="AppTicketRegistry.cs" />
+    <Compile Include="AutoMetadataProvider.cs" />
+    <Compile Include="BaseApplication.cs" />
+    <Compile Include="BaseWebEnvironment.cs" />
+    <Compile Include="CacheObject.cs" />
+    <Compile Include="ClsModel.cs" />
+    <Compile Include="Commons.cs" />
+    <Compile Include="Components\FunctionHandler.cs" />
+    <Compile Include="Components\LookupList.cs" />
+    <Compile Include="Components\Scaffolder.cs" />
+    <Compile Include="Controllers\AclController.cs" />
+    <Compile Include="Controllers\AdminControllerBase.cs" />
+    <Compile Include="Controllers\AppRestartTimer.cs" />
+    <Compile Include="Controllers\ControllerResourceHelper.cs" />
+    <Compile Include="Controllers\DefaultPartitionsSource.cs" />
+    <Compile Include="Controllers\ExternalPartitionsFilter.cs" />
+    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\MetalinkController.cs" />
+    <Compile Include="Controllers\OperationLogFilter.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ReportOperationLogFilter.cs" />
+    <Compile Include="Controllers\RequestBoundAttribute.cs" />
+    <Compile Include="Controllers\SysJsController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\WorkbenchControllerExtension.cs" />
+    <Compile Include="DefaultRescueProvider.cs" />
+    <Compile Include="Dictionaries\DictionaryMap.cs" />
+    <Compile Include="Dictionaries\DictionaryModel.cs" />
+    <Compile Include="Dictionaries\DictionaryPoco.cs" />
+    <Compile Include="Dictionaries\DictionaryValueMap.cs" />
+    <Compile Include="Dictionaries\DictionaryValuePoco.cs" />
+    <Compile Include="Dictionaries\ICommonDictionary.cs" />
+    <Compile Include="Dictionaries\ICommonDictionaryValue.cs" />
+    <Compile Include="Dictionaries\ICommonObjectData.cs" />
+    <Compile Include="Dictionaries\IWithCommonDictionary.cs" />
+    <Compile Include="Dictionaries\IWithDictionaryValues.cs" />
+    <Compile Include="Dictionaries\ObjectDataMap.cs" />
+    <Compile Include="Dictionaries\ObjectDataPoco.cs" />
+    <Compile Include="FileXPathExtension.cs" />
+    <Compile Include="IApplicationCache.cs" />
+    <Compile Include="ICache.cs" />
+    <Compile Include="ICacheLease.cs" />
+    <Compile Include="ICacheObject.cs" />
+    <Compile Include="ICustomControllerRuleTester.cs" />
+    <Compile Include="IMvcMatcher.cs" />
+    <Compile Include="IMvcStarter.cs" />
+    <Compile Include="IObjectData.cs" />
+    <Compile Include="IOperationLog.cs" />
+    <Compile Include="IPartition.cs" />
+    <Compile Include="IPartitionsSource.cs" />
+    <Compile Include="IPropertyProvider.cs" />
+    <Compile Include="IResqueProvider.cs" />
+    <Compile Include="IRoleResolverCacheItem.cs" />
+    <Compile Include="ITask.cs" />
+    <Compile Include="IWebEnvironment.cs" />
+    <Compile Include="Lookup\AliasNotRegesteredException.cs" />
+    <Compile Include="Lookup\CommonDictionaryLookupSource.cs" />
+    <Compile Include="Lookup\CommonDictionaryLookupSourceProvider.cs" />
+    <Compile Include="Lookup\DbLookupRegistry.cs" />
+    <Compile Include="Lookup\DbLookupSource.cs" />
+    <Compile Include="Lookup\DbLookupSourceProvider.cs" />
+    <Compile Include="Lookup\ILookupFilter.cs" />
+    <Compile Include="Lookup\ILookupItem.cs" />
+    <Compile Include="Lookup\ILookupQuery.cs" />
+    <Compile Include="Lookup\ILookupSource.cs" />
+    <Compile Include="Lookup\ILookupSourceProvider.cs" />
+    <Compile Include="Lookup\IReloadAble.cs" />
+    <Compile Include="Lookup\LookupDispatcher.cs" />
+    <Compile Include="Lookup\LookupException.cs" />
+    <Compile Include="Lookup\LookupHelper.cs" />
+    <Compile Include="Lookup\LookupItem.cs" />
+    <Compile Include="Lookup\LookupStorageStep.cs" />
+    <Compile Include="Lookup\LookupQuery.cs" />
+    <Compile Include="Lookup\LookupSource.cs" />
+    <Compile Include="Lookup\NullLookupFilter.cs" />
+    <Compile Include="MvcApplication.cs" />
+    <Compile Include="MvcConstants1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>MvcConstants.settings</DependentUpon>
+    </Compile>
+    <Compile Include="MvpException.cs" />
+    <Compile Include="MyBrailBase.cs" />
+    <Compile Include="OperationLog.cs" />
+    <Compile Include="OperationLogMap.cs" />
+    <Compile Include="Option.cs" />
+    <Compile Include="Preprocess\FluentImportPreprocessor.cs" />
+    <Compile Include="Preprocess\ForCyclePreprocessor.cs" />
+    <Compile Include="Preprocess\IncludePreprocessor.cs" />
+    <Compile Include="Preprocess\RegexBasedBrailPreprocessor.cs" />
+    <Compile Include="Preprocess\ResourceBrailPreprocessor.cs" />
+    <Compile Include="Preprocess\SetupVariablePreprocessor.cs" />
+    <Compile Include="Reporting\Security\ReportTokenProvider.cs" />
+    <Compile Include="Report\ReportParametersRepository.cs" />
+    <Compile Include="Resources\ControllerRuleStrings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ControllerRuleStrings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\IoCNames1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>IoCNames.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\RequestParameterNames1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>RequestParameterNames.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Rules\ControllerRuleStorage.cs" />
+    <Compile Include="Security\AuthorizeFilter.cs" />
+    <Compile Include="Security\IAuthorizer.cs" />
+    <Compile Include="Security\MvcAthorizationExtension.cs" />
+    <Compile Include="Security\MvcTokenProvider.cs" />
+    <Compile Include="Security\MvcTokenRewriterBase.cs" />
+    <Compile Include="SlidingLease.cs" />
+    <Compile Include="TaskExecuteWhen.cs" />
+    <Compile Include="AssemblyViewSource.cs" />
+    <Compile Include="asynctest.cs" />
+    <Compile Include="ConfigurationHelper.cs" />
+    <Compile Include="Controllers\BasePartition.cs" />
+    <Compile Include="Controllers\ConfigurationController.cs" />
+    <Compile Include="Controllers\ConversationFilter.cs" />
+    <Compile Include="Controllers\HealthController.cs" />
+    <Compile Include="Controllers\InversionHelper.cs" />
+    <Compile Include="Controllers\IWithConversationController.cs" />
+    <Compile Include="Controllers\LogoWorkspacePartition.cs" />
+    <Compile Include="Controllers\MeWorkspacePartition.cs" />
+    <Compile Include="Controllers\PublicController.cs" />
+    <Compile Include="Controllers\SecurityHelper.cs" />
+    <Compile Include="Controllers\StubAdminController.cs" />
+    <Compile Include="Controllers\WorkspaceController.cs" />
+    <Compile Include="Controllers\WorkspacePartition.cs" />
+    <Compile Include="Controllers\WorkspaceZone.cs" />
+    <Compile Include="Core\LogItemMap.cs" />
+    <Compile Include="Core\LogModel.cs" />
+    <Compile Include="DirectoryClearTask.cs" />
+    <Compile Include="Reporting\Core\ReportRequest.cs" />
+    <Compile Include="Reporting\IReportFactory.cs" />
+    <Compile Include="Reporting\MultipleProdcution.cs" />
+    <Compile Include="Reporting\ReportFactory.cs" />
+    <Compile Include="Reporting\ReportProcessorBaseWithExecutionPipe.cs" />
+    <Compile Include="Reporting\ReportProcessorBaseWithLoad.cs" />
+    <Compile Include="Reporting\RequestManaging\SessionRequestStorage.cs" />
+    <Compile Include="Report\BooBasedReportContentPreparator.cs" />
+    <Compile Include="Report\BrailBasedReportContentPrepararor.cs" />
+    <Compile Include="Report\BrailXsltExtension.cs" />
+    <Compile Include="Report\IReportContentPreparator.cs" />
+    <Compile Include="Report\IReportControllerExtension.cs" />
+    <Compile Include="Report\ReportControllerExtension.cs" />
+    <Compile Include="Report\ReportSetHelper.cs" />
+    <Compile Include="Report\ReportController.cs" />
+    <Compile Include="Rules\ControllerRuleLoader.cs" />
+    <Compile Include="Rules\IControllerExpertModifier.cs" />
+    <Compile Include="Rules\IControllerRuleLoader.cs" />
+    <Compile Include="Scaffolding\DatabaseController.cs" />
+    <Compile Include="Scaffolding\DataHelper.cs" />
+    <Compile Include="Scaffolding\SpecialObjectHelperException.cs" />
+    <Compile Include="Scaffolding\TypeAliasHelper.cs" />
+    <Compile Include="Scaffolding\TypeAliasHelperException.cs" />
+    <Compile Include="Scaffolding\UniversalObjectManagerController.cs" />
+    <Compile Include="Security\RoleResolverCache.cs" />
+    <Compile Include="Security\RoleResolverCacheItem.cs" />
+    <Compile Include="Security\RoleResolverCacheItemMap.cs" />
+    <Compile Include="Filters\ExcludeFilterAttribute.cs" />
+    <Compile Include="Filters\RescueProvider.cs" />
+    <Compile Include="Filters\WorkspacePrepareFilter.cs" />
+    <Compile Include="IBrailRender.cs" />
+    <Compile Include="Services\DefaultMvcCache.cs" />
+    <Compile Include="Controllers\ImpersonationController.cs" />
+    <Compile Include="Controllers\MvcPrepareHelper.cs" />
+    <Compile Include="Controllers\ResourceResolverController.cs" />
+    <Compile Include="Controllers\ActionDescriptionAttribute.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\SysController.cs" />
+    <Compile Include="Core\ControllerProc.cs" />
+    <Compile Include="Core\DynamicActionHandler.cs" />
+    <Compile Include="Core\IControllerAwareItem.cs" />
+    <Compile Include="Core\IControllerConstructor.cs" />
+    <Compile Include="Core\IDynamicActionHandler.cs" />
+    <Compile Include="Core\ILogItem.cs" />
+    <Compile Include="Core\LogItem.cs" />
+    <Compile Include="Core\MvcContext.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Extensions\ControllerExtensions.cs" />
+    <Compile Include="FilterState.cs" />
+    <Compile Include="Filters\AbstractExtendedFilterDescriptorProvider.cs" />
+    <Compile Include="Filters\FilterProvider.cs" />
+    <Compile Include="Filters\CustomFilterDecscriptorProvider.cs" />
+    <Compile Include="Filters\FilterDescriptorProviderCollection.cs" />
+    <Compile Include="Filters\ICustomFilterDecscriptorProvider.cs" />
+    <Compile Include="Filters\ScriptedFilter.cs" />
+    <Compile Include="IContainerSetter.cs" />
+    <Compile Include="Extensions\AdapterExtensions.cs" />
+    <Compile Include="Services\DefaultParametersBinder.cs" />
+    <Compile Include="ResourceHelper.cs" />
+    <Compile Include="Scaffolding\FormBindablePropertyAttribute.cs" />
+    <Compile Include="Scaffolding\IMetadataHelper.cs" />
+    <Compile Include="Scaffolding\IObjectRefactorer.cs" />
+    <Compile Include="Scaffolding\ISelfBinder.cs" />
+    <Compile Include="Scaffolding\MetadataHelper.cs" />
+    <Compile Include="Security\AccessLevelAttribute.cs" />
+    <Compile Include="UrlHelper.cs" />
+    <Compile Include="Utils\DevLogger.cs" />
+    <Compile Include="Utils\LoggingInterceptor.cs" />
+    <Compile Include="Utils\MVCLog.cs" />
+    <Compile Include="Filters\LayoutPrepareFilter.cs" />
+    <Compile Include="Filters\LogFilter.cs" />
+    <Compile Include="Filters\RedirectViewFilter.cs" />
+    <Compile Include="Rules\ControllerRule.cs" />
+    <Compile Include="Rules\ControllerRuleGroup.cs" />
+    <Compile Include="Rules\ControllerExpert.cs" />
+    <Compile Include="Rules\ControllerRuleStorageExecutor.cs" />
+    <Compile Include="Security\DefaultAuthorizeService.cs" />
+    <Compile Include="Utils\SessionAsDictionary.cs" />
+    <Compile Include="Utils\UsersActionLogger.cs" />
+    <Compile Include="Wiki\WikiReportParameterLinkRender.cs" />
+    <Compile Include="Wiki\WikiController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Core\Qorpent.Core.csproj">
+      <Project>{880F65EA-1A22-4672-A137-FFC91290A209}</Project>
+      <Name>Qorpent.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Castle.MonoRail.Views.Brail\Castle.MonoRail.Views.Brail.csproj">
+      <Project>{CC39D6D0-2467-4DD5-A53E-92D580B60038}</Project>
+      <Name>Castle.MonoRail.Views.Brail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Dependency\Comdiv.Dependency.csproj">
+      <Project>{6E58C87C-2522-4AA5-9211-6109305B2D7B}</Project>
+      <Name>Comdiv.Dependency</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Reporting\Comdiv.Reporting.csproj">
+      <Project>{053AE040-0545-4ED0-927A-69B3423BA66D}</Project>
+      <Name>Comdiv.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Rules\Comdiv.Rules.csproj">
+      <Project>{9284A448-510F-40CA-84B4-42F71095A099}</Project>
+      <Name>Comdiv.Rules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Useful\Comdiv.Useful.csproj">
+      <Project>{DDA796A7-3440-4D9E-9E3F-99B97B169332}</Project>
+      <Name>Comdiv.Useful</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Xml\Comdiv.Xml.csproj">
+      <Project>{60CCC632-A426-475F-B0A7-483FBC729F8A}</Project>
+      <Name>Comdiv.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Dom\Comdiv.Dom.csproj">
+      <Project>{4FDA671A-1288-4F13-8396-3AD189EA3D7C}</Project>
+      <Name>Comdiv.Dom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.FluentView\Comdiv.FluentView.csproj">
+      <Project>{8A17241D-E106-4779-962C-068534E7D876}</Project>
+      <Name>Comdiv.FluentView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Extensibility\Comdiv.Extensibility.csproj">
+      <Project>{C1944938-B798-478A-BA1C-FDA8BA152FF3}</Project>
+      <Name>Comdiv.Extensibility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MvcConstants.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MvcConstants1.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\file\index.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\file\commands.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\file\exec.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\file\execForm.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\file\folder.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\file\js.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\file\upload.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\acl\all.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\echo.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\ControllerRuleStrings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ControllerRuleStrings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\IoCNames.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>IoCNames1.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\controllers.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\extensions.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\errors\exception.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\errors\index.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\errors\unauthorized.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\RequestParameterNames.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>RequestParameterNames1.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\workspace\impersonator.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\layouts\utils.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\layouts\workspace.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\layouts\workspace_header.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\workspace\logo.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\workspace\me.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\workspace\index.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\layouts\workspace_content.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\shared\partitions.brail" />
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\stats.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\sessions.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\errors\rescue.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repos\Comdiv.MVC\sys\views\sys\patch.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lookup\СМОТРИ schema.crate.sql папкой выше!!!!!!!!.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\" />
+    <Folder Include="Web\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MONO|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OPTIMIZED;MONO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+</Project>

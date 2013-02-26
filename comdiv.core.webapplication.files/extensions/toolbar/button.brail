@@ -1,0 +1,18 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	button as Widget
+bml:
+	div "main-toolbar-button ${button.SpecClass}", id="main-toolbar-button-${button.Code}", doc="${button.GetDocCode()}", hasdoc="${button.HasDoc()}" :
+		if button.View :
+			OutputSubView(button.View, {@button : button})
+		else :
+			div "main-toolbar-button-main default", title="${button.Comment}" :
+				img src="${button.GetImage(32)}"
+			div "main-toolbar-button-name" : "${button.Name}"
+			div "main-toolbar-button-favorite", id="main-toolbar-button-${button.Code}-favorite"
+			div "main-toolbar-button-wiki", id="main-toolbar-button-${button.Code}-wiki"
+			script : """				
+				zeta.toolbar.register('${button.Code}', function (buttoncode,event) { ${button.OnClick} }, '${button.Quick}');
+			"""
+	div "main-toolbar-splitter" : "&nbsp;"

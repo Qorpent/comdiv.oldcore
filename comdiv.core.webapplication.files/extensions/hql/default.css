@@ -1,0 +1,75 @@
+.hql textarea  {
+	font-family : Consolas;
+	font-size: 8pt;
+	color : #0000AA;
+}
+div.hql_table {
+	float : left;
+}
+#hql_query {
+	width : 800px;
+	height: 50px;
+	font-size : 8pt;
+}
+
+.hql .menuzone {
+	background-color:red;
+}
+
+td.editable_True {
+	background-color : #efffef;
+}
+
+td.inchangemode {
+	background-color : #ffaaaa;
+}
+
+.editor_field {
+	width :95%;
+}
+#hql_result {
+	max-height : 600px;
+	overflow : scroll;
+}
+
+#hqlAddForm {
+	position: fixed;
+}
+
+.hql-add-record {
+	cursor: pointer;
+}
+
+.rowname-padding {
+	background: url('row-level.png') no-repeat left;
+	float: left;
+	margin: 0px 10px 0px 0px;
+}
+
+.rowname-padding[level="1"] {
+	width: 10px;
+}
+
+.rowname-padding[level="2"] {
+	width: 20px;
+}
+
+.rowname-padding[level="3"] {
+	width: 30px;
+}
+.rowname-padding[level="4"] {
+	width: 40px;
+}
+
+.rowname-padding[level="5"] {
+	width: 50px;
+}
+.rowname-padding[level="6"] {
+	width: 60px;
+}
+.rowname-padding[level="7"] {
+	width: 70px;
+}
+.rowname-padding[level="8"] {
+	width: 80px;
+}

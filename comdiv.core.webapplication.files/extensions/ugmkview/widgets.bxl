@@ -1,0 +1,2 @@
+﻿resources : "ugmkview"
+widget "ugmk-logo", "Логотип угмк ассои", type="view", view="/ugmkview/ugmklogo", image='ugmkview/logo', position=title, idx=-10

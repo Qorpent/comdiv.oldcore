@@ -1,0 +1,152 @@
+#body {
+	height: 100%;
+	min-width: 1000px;
+	margin: 0px 0px 0px 0px;
+}
+
+/*
+  -------------------------------------------------
+                    Стили шапки
+  -------------------------------------------------
+*/
+
+#zlt_header {
+	font-family: "Arial";
+	font-size: 10pt;
+	height: 50px;
+	background: url('img/top_bg01.png') repeat-x;
+	position: relative;
+}
+
+#zlt_header_left {
+	float: left;
+	width: 150px;
+	height: 100%;
+}
+
+#zlt_header_center {
+	height: 100%;
+	margin: 0px 152px 0px 152px;
+}
+
+#zlt_header_center ul.topmenu {
+	list-style-type: none;
+	padding-top: 16px;
+}
+
+ul.topmenu li {
+	float: left;
+	padding: 0px 7px 0px 7px;
+}
+
+ul.topmenu li a {
+	color: black;
+	text-decoration: none;
+}
+
+ul.topmenu li:hover {
+	background-color: #e5e5e5;
+}
+
+#zlt_header_right {
+	float: right;
+	width: 150px;
+	height: 100%;
+}
+
+
+/*
+  -------------------------------------------------
+              Стили центральной части
+  -------------------------------------------------
+*/
+
+
+#zlt_content {
+	position: relative;
+	background: url('img/center_bg01.png') repeat-x;
+	background-position: top left;
+	padding-top: 5px;
+	width: 100%;
+}
+
+#zlt_content_left {
+	float: left;
+	width: 200px;
+	margin-left: -100%;
+	background-color: #ea4d00;
+}
+
+#zlt_content_center {
+	width: 100%;
+	float: left;
+	background-color: #fdf9db;
+}
+
+#zlt_content_center_header {
+	
+}
+
+#zlt_content_center_content {
+	
+}
+
+#zlt_content_center_content_main {
+	width: 100%;
+	margin-right: 200px;
+}
+
+#zlt_content_center_content_extension {
+	float: right;
+	width: 200px;
+}
+
+#zlt_content_center_footer {
+
+}
+
+#zlt_content_right {
+	float: left;
+	width: 200px;
+	margin-left: -200px;
+	background-color: #ff8040;
+}
+
+
+/*
+  -------------------------------------------------
+                    Стили футера
+  -------------------------------------------------
+*/
+
+
+
+#zlt_footer {
+	height: 50px;
+	position: relative;
+	background-color: #e6e6e6;
+}
+
+#zlt_footer_left {
+	float: left;
+	width: 1px;
+	height: 100%;
+}
+
+#zlt_footer_center {
+	height: 100%;
+	margin: 0px 1px 0px 1px;
+	background-color: #eaeaea;
+}
+
+#zlt_footer_right {
+	float: right;
+	width: 1px;
+	height: 100%;
+}
+
+div.copyright {
+	padding: 20px 0px 0px 25px;
+	font-size: 11px;
+	top: 35px;
+}

@@ -1,0 +1,102 @@
+.zeta_ajax_status {
+	width:16px;
+}
+
+.zeta_ajax_status.active {
+	background-image : url(ajax16.gif)
+}
+.zeta_ajax_status.inactive {
+	background-image : url(ajax16.png)
+}
+
+.status-short-result{
+	max-width : 300px;
+	min-width : 200px;
+	min-height: 16px;
+	max-height : 30px;
+	padding-left:3px;
+	padding-right:3px;
+	border: solid 1px #CCC;
+}
+
+.status-short-result.new{
+	background-color : #FFC;
+	text-decoration : blink;
+}
+.status-ping.unk {
+	background-image : url(unkping16.png);
+}
+
+.status-ping.ping {
+	background-image : url(ping16.png);
+}
+
+.status-ping.noping {
+	background-image : url(noping16.png);
+}
+
+.core-security-table .title  td{
+	font-size: 8pt;
+}
+
+.core-security-table .title  input{
+	font-size: 8pt;
+	border: solid 1px #ccc;
+}
+
+.core-security-table .buttons div {
+	min-height:16px;
+	background-position : center;
+	background-repeat : no-repeat;
+	padding:2px;
+	
+}
+
+
+.core-security-table {
+	border-collapse : collapse;
+}
+
+
+.core-security-table .buttons div:hover {
+	border : solid 1px #ccc;
+	border-radius : 5px;
+	-moz-border-radius : 5px;
+	padding:1px;
+}
+
+#core-security-username {
+	height: 18px;
+	color: #BBBBBB;
+}
+
+#core-security-role {
+	height: 18px;
+	color: #BBBBBB;
+}
+
+#core-security-impersonate {
+	margin-left: 1px;
+	margin-top: 0px;
+	padding: 1px 3px 1px 3px;
+	font-size: 10px;
+}
+
+#core-security-test {
+	margin-left: 1px;
+	margin-top: 0px;
+	padding: 1px 3px 1px 3px;
+	font-size: 10px;
+}
+
+#core-security-assign {
+	margin-top: 0px;
+	padding: 1px 3px 1px 3px;
+	font-size: 10px;
+}
+
+#core-security-revoke {
+	margin-top: 0px;
+	padding: 1px 3px 1px 3px;
+	font-size: 10px;
+}

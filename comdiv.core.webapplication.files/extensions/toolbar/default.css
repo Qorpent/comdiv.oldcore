@@ -1,0 +1,325 @@
+.main-toolbar {
+	z-index: 1000;
+	position: fixed;
+	background-color: #FFFFFF;
+	top: 0px;
+	padding: 1px 0px 1px 1px;
+	margin-left:0px;
+	margin-right:0px;
+	width :98%;
+}
+
+#zlt_content {
+	margin-bottom : 20px;
+}
+
+.main-toolbar-favorite {
+	float:left;
+	padding-right: 3px;
+	cursor: pointer;
+}
+
+.main-toolbar-favorite img {
+	width:16px;
+	height:16px;
+}
+
+.main-toolbar select {
+	border : solid 1px #CCCCCC;
+	min-width:80px;
+	font-size: 8pt;
+	margin: 0px 0px 1px 0px;
+}
+.main-toolbar-static{
+	
+}
+
+.main-statusbar-element{
+	float:left;
+	margin-right:3px;
+	padding-left:1px;
+	padding-right:1px;
+	margin-top : 2px;
+	margin-bottom : 0px;
+	padding-top : 0px;
+	padding-bottom : 0px;
+	font-size: 8pt;
+}
+.main-statusbar-element.right{
+	float:right;
+}
+.main-toolbar-dynamic {
+	position: relative;
+	top: -2px;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.03, rgb(255,255,255)),
+		color-stop(0.15, rgb(233,233,233)),
+		color-stop(0.7, rgb(245,245,245)),
+		color-stop(0.88, rgb(255,255,255))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 3%,
+		rgb(233,233,233) 15%,
+		rgb(245,245,245) 70%,
+		rgb(255,255,255) 88%
+	);
+	-moz-border-radius : 0px 0px 10px 10px;
+	border-radius : 0px 0px 10px 10px;
+	border : solid 1px #CCCCCC;
+}
+
+.main-toolbar-expand {
+	
+}
+
+.main-toolbar-tab {
+	float: left;
+	font-size: 12pt;
+	cursor: pointer;
+	text-align: center;
+	font-size: 11px;
+	color: #5a5a5a;
+	padding-left : 5px;
+	padding-right: 5px;
+	padding-top : 2px;
+	padding-bottom : 2px;
+	margin-right:-3px;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.03, rgb(255,255,255)),
+		color-stop(0.15, rgb(233,233,233)),
+		color-stop(0.7, rgb(245,245,245)),
+		color-stop(0.88, rgb(255,255,255))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 3%,
+		rgb(233,233,233) 15%,
+		rgb(245,245,245) 70%,
+		rgb(255,255,255) 88%
+	);
+	border : solid 1px #CCCCCC;
+	-moz-border-radius : 5px 5px 0px 0px;
+	border-radius : 5px 5px 0px 0px;
+}
+
+div.main-toolbar-tab:hover {
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(255,246,201)),
+		color-stop(0.15, rgb(255,225,135)),
+		color-stop(0.75, rgb(255,255,168)),
+		color-stop(1, rgb(255,254,237))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,246,201) 0%,
+		rgb(255,225,135) 15%,
+		rgb(255,255,168) 75%,
+		rgb(255,254,237) 100%
+	);
+}
+
+.main-toolbar-tab.active {
+	z-index : 100;
+	border-bottom : none;
+	position : relative;
+	background-color:white !important;
+	background-image : none !important;
+	font-weight:bold;
+}
+
+.main-toolbar-button {
+	position: relative;
+	float: left;
+	margin: 5px;
+	padding: 3px;
+	cursor: pointer;
+}
+
+div.main-toolbar-button:hover {
+	padding: 2px;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(255,246,201)),
+		color-stop(0.15, rgb(255,225,135)),
+		color-stop(0.75, rgb(255,255,168)),
+		color-stop(1, rgb(255,254,237))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,246,201) 0%,
+		rgb(255,225,135) 15%,
+		rgb(255,255,168) 75%,
+		rgb(255,254,237) 100%
+	);
+	border : solid 1px #ffbf00;
+	-moz-border-radius : 5px;
+}
+
+div.main-toolbar-button:hover .main-toolbar-button-favorite {
+	display: block;
+}
+
+div.main-toolbar-button:hover .main-toolbar-button-wiki {
+	display: block;
+}
+
+.main-toolbar-button-name {
+	font-size: 9pt;
+	text-align : center;
+}
+
+.main-toolbar-button-main {
+	height: 38px;
+	
+}
+.main-toolbar-button-main.default {
+	height: 38px;
+	text-align : center;	
+}
+
+.main-toolbar-static {
+	width: 100%;
+	clear: both;
+}
+.main-toolbar-dynamic {
+	width: 100%;
+	clear: both;
+}
+
+.main-toolbar-splitter {
+	float: left;
+	border-right: solid 1px #CCC;
+	height: 55px;
+	margin-top: 5px
+}
+
+.main-toolbar-button-favorite {
+	display: none;
+}
+
+.main-toolbar-button-favorite {
+	z-index: 454;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 0px;
+	right: 0px;
+	background: url('fav_ico_grey.png');
+}
+
+.main-toolbar-button-wiki {
+	z-index: 454;
+	display: none;	
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 30px;
+	right: 0px;
+	background: url('fav_ico_hasdoc.png');
+}
+
+.main-toolbar-button-wiki.hasdoc {
+	z-index: 454;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 30px;
+	right: 0px;
+	background: url('fav_ico_hasdoc.png');
+}
+
+
+.main-toolbar-button-favorite.added {
+	background: url('fav_ico_green.png');
+}
+
+.main-statusbar {
+	z-index: 999;
+	position: fixed;
+	bottom: 0px;
+	width :98%;
+	background-color: #FFFFFF;
+}
+
+.main-statusbar-dynamic {
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.03, rgb(255,255,255)),
+		color-stop(0.15, rgb(233,233,233)),
+		color-stop(0.7, rgb(245,245,245)),
+		color-stop(0.88, rgb(255,255,255))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 3%,
+		rgb(233,233,233) 15%,
+		rgb(245,245,245) 70%,
+		rgb(255,255,255) 88%
+	);
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: solid 1px #CCCCCC;
+	height: 20px;
+}
+
+.main-toolbar-title {
+	-moz-border-radius: 0px 0px 0px 15px;
+	border-radius: 0px 0px 0px 15px;
+	position : absolute;
+	right : -2px;
+	height:18px;
+	min-width : 100px;
+	max-width : 50%;
+	background-color: blue;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.03, rgb(255,255,255)),
+		color-stop(0.15, rgb(233,233,233)),
+		color-stop(0.7, rgb(245,245,245)),
+		color-stop(0.88, rgb(255,255,255))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 3%,
+		rgb(233,233,233) 15%,
+		rgb(245,245,245) 70%,
+		rgb(255,255,255) 88%
+	);
+	z-index: 20;
+	border : solid 1px #ccc;
+	padding-left : 10px;
+}
+
+.main-title-element {
+	float : left;
+	margin-right : 3px;
+}
+.main-title-element.right {
+	float : right;
+	
+}
+.main-document-title {
+	padding-left : 5px;
+	padding-right: 5px;
+	font-style : italic;
+}
+.main-document-title.new {
+	background-color : #FFC;
+	text-decoration : blink;
+}

@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Comdiv.MVC" GeneratedClassName="Constants">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultPersistenceChainImplementationIoCName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">persister.default.chain.implementation</Value>
+    </Setting>
+    <Setting Name="DefaultContainerFactory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Comdiv.Inversion.WindsorInversionContainerFactory, Comdiv.MVC</Value>
+    </Setting>
+    <Setting Name="DefaultSqlScriptSplitRegex" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">(?i)[\r\n]+[^\S\r\n]*go(?=[^\S\r\n]*?(([\r\n]+)|$))</Value>
+    </Setting>
+    <Setting Name="DefaultScriptMask" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">schema.{0}.sql</Value>
+    </Setting>
+    <Setting Name="DefaultWindsorFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

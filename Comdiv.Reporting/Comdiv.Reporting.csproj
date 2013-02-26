@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{053AE040-0545-4ED0-927A-69B3423BA66D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comdiv.Reporting</RootNamespace>
+    <AssemblyName>Comdiv.Reporting</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\MIGRATION\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>comdiv.core.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Boo.Lang.Compiler">
+      <HintPath>..\..\exras\lib\\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=0.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DefaultReportViewFactory.cs" />
+    <Compile Include="DefinitionTemplateState.cs" />
+    <Compile Include="IMultipleReportProduction.cs" />
+    <Compile Include="IMultiProductionReportRequest.cs" />
+    <Compile Include="IProductionGenerator.cs" />
+    <Compile Include="IReportCache.cs" />
+    <Compile Include="IReportCacheLeaseChecker.cs" />
+    <Compile Include="IReportDefinition.cs" />
+    <Compile Include="IReportDefinitionCacheStringProvider.cs" />
+    <Compile Include="IReportDefinitionDynamicView.cs" />
+    <Compile Include="IReportOutputFormat.cs" />
+    <Compile Include="IReportOutputProcessor.cs" />
+    <Compile Include="IReportProcessor.cs" />
+    <Compile Include="IReportProduction.cs" />
+    <Compile Include="IReportProductionFormat.cs" />
+    <Compile Include="IReportRequest.cs" />
+    <Compile Include="IReportRequestIdentity.cs" />
+    <Compile Include="IReportRequestLoader.cs" />
+    <Compile Include="IReportRequestRefactorer.cs" />
+    <Compile Include="IReportRequestSecurityChecker.cs" />
+    <Compile Include="IReportViewFactory.cs" />
+    <Compile Include="IReportViewGenerator.cs" />
+    <Compile Include="ISavedReport.cs" />
+    <Compile Include="ISavedReportParameter.cs" />
+    <Compile Include="IWikiHelper.cs" />
+    <Compile Include="Options\ReportPackagingMode.cs" />
+    <Compile Include="Options\ReportReturnMode.cs" />
+    <Compile Include="Parameter.cs" />
+    <Compile Include="ParametersCollection.cs" />
+    <Compile Include="ProductionBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportCache.cs" />
+    <Compile Include="ReportDefinitionBase.cs" />
+    <Compile Include="ReportDefinitionCacheStringProvider.cs" />
+    <Compile Include="ReportException.cs" />
+    <Compile Include="ReportLoadException.cs" />
+    <Compile Include="ReportProcessorBase.cs" />
+    <Compile Include="ReportRequestLoaderBase.cs" />
+    <Compile Include="ReportWidget.cs" />
+    <Compile Include="ReportWidgetCollection.cs" />
+    <Compile Include="SavedReportRepository.cs" />
+    <Compile Include="TypeAliases.cs" />
+    <Compile Include="WikiHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Bxl\Qorpent.Bxl.csproj">
+      <Project>{381DEC86-5709-4A64-BD9F-462E792884CE}</Project>
+      <Name>Qorpent.Bxl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Core\Qorpent.Core.csproj">
+      <Project>{880F65EA-1A22-4672-A137-FFC91290A209}</Project>
+      <Name>Qorpent.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Dsl\Qorpent.Dsl.csproj">
+      <Project>{B758E220-22F5-47DF-A73B-BC9B1A3DBDC3}</Project>
+      <Name>Qorpent.Dsl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Extensibility\Comdiv.Extensibility.csproj">
+      <Project>{C1944938-B798-478A-BA1C-FDA8BA152FF3}</Project>
+      <Name>Comdiv.Extensibility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Useful\Comdiv.Useful.csproj">
+      <Project>{DDA796A7-3440-4D9E-9E3F-99B97B169332}</Project>
+      <Name>Comdiv.Useful</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="comdiv.core.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

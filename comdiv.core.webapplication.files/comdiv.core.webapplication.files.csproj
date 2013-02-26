@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D2C78E32-3584-49B6-9E2B-289B84D9DB3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>comdiv.core.webapplication.files</RootNamespace>
+    <AssemblyName>comdiv.core.webapplication.files</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\artifacts\webcore\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\MIGRATION\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="extensions\bxltester\bxl32.png" />
+    <Content Include="extensions\bxltester\default.css" />
+    <Content Include="extensions\bxltester\default.js" />
+    <Content Include="extensions\bxltester\editor32.png" />
+    <Content Include="extensions\bxltester\files.brail" />
+    <Content Include="extensions\bxltester\index.brail" />
+    <Content Include="extensions\bxltester\themas32.png" />
+    <Content Include="extensions\bxltester\xml32.png" />
+    <Content Include="extensions\extendedtextarea\.bak\default.css\YYYY-03-04-06-46-59-UGMK_sfo.css" />
+    <Content Include="extensions\extendedtextarea\default.css" />
+    <Content Include="extensions\extendedtextarea\default.js" />
+    <Content Include="extensions\extendedtextarea\ico01.png" />
+    <Content Include="extensions\extendedtextarea\ico02.png" />
+    <Content Include="extensions\filemanager\.bak\default.css\YYYY-03-04-06-46-59-UGMK_sfo.css" />
+    <Content Include="extensions\filemanager\boo16.png" />
+    <Content Include="extensions\filemanager\brail16.png" />
+    <Content Include="extensions\filemanager\close16.png" />
+    <Content Include="extensions\filemanager\closeall32.png" />
+    <Content Include="extensions\filemanager\default.css" />
+    <Content Include="extensions\filemanager\default.js" />
+    <Content Include="extensions\filemanager\js16.png" />
+    <Content Include="extensions\filemanager\new32.png" />
+    <Content Include="extensions\filemanager\open32.png" />
+    <Content Include="extensions\filemanager\reload32.png" />
+    <Content Include="extensions\filemanager\save32.png" />
+    <Content Include="extensions\filemanager\saveall32.png" />
+    <Content Include="extensions\filemanager\search16.png" />
+    <Content Include="extensions\hql\default.css" />
+    <Content Include="extensions\hql\default.js" />
+    <Content Include="extensions\hql\execute32.png" />
+    <Content Include="extensions\hql\open32.png" />
+    <Content Include="extensions\sql\default.css" />
+    <Content Include="extensions\sql\default.js" />
+    <Content Include="extensions\sql\execute.brail" />
+    <Content Include="extensions\sql\execute32.png" />
+    <Content Include="extensions\sql\index.brail" />
+    <Content Include="extensions\sql\open32.png" />
+    <Content Include="extensions\systools\addrole16.png" />
+    <Content Include="extensions\systools\ajax16.gif" />
+    <Content Include="extensions\systools\ajax16.png" />
+    <Content Include="extensions\systools\ask16.png" />
+    <Content Include="extensions\systools\clear32.png" />
+    <Content Include="extensions\systools\default.css" />
+    <Content Include="extensions\systools\default.js" />
+    <Content Include="extensions\systools\extinstaller32.png" />
+    <Content Include="extensions\systools\impersonate16.png" />
+    <Content Include="extensions\systools\noping16.png" />
+    <Content Include="extensions\systools\ping16.png" />
+    <Content Include="extensions\systools\reinstall32.png" />
+    <Content Include="extensions\systools\removerole16.png" />
+    <Content Include="extensions\systools\restart32.png" />
+    <Content Include="extensions\systools\return32.png" />
+    <Content Include="extensions\systools\unkping16.png" />
+    <Content Include="extensions\toolbar\alpha.png" />
+    <Content Include="extensions\toolbar\default.css" />
+    <Content Include="extensions\toolbar\default.js" />
+    <Content Include="extensions\toolbar\fav_ico_green.png" />
+    <Content Include="extensions\toolbar\fav_ico_grey.png" />
+    <Content Include="extensions\toolbar\ico01.png" />
+    <Content Include="extensions\toolbar\ico02.png" />
+    <Content Include="extensions\toolbar\tab_bg.png" />
+    <Content Include="extensions\toolbar\tab_expand_bg.png" />
+    <Content Include="extensions\toolbar\tab_expand_left.png" />
+    <Content Include="extensions\toolbar\tab_expand_right.png" />
+    <Content Include="extensions\toolbar\tab_left.png" />
+    <Content Include="extensions\toolbar\tab_right.png" />
+    <Content Include="extensions\twitconsole\default.css" />
+    <Content Include="extensions\twitconsole\default.js" />
+    <Content Include="extensions\ugmkview\default.css" />
+    <Content Include="extensions\ugmkview\logo16.png" />
+    <Content Include="images\ico16.png" />
+    <Content Include="images\ico32.png" />
+    <Content Include="images\ico64.png" />
+    <Content Include="styles\comdiv.layout.css" />
+    <Content Include="styles\proto.menu.css" />
+    <Content Include="views\extinstaller\default.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="mvcroot\Global.asax" />
+    <Content Include="coreroot\Global.asax">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\calendar.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.behaviour.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.dbfs.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.log.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.modal.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.pkg.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.contextmenu.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.datetimepicker.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.editor.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.etable.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.etable2.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\comdiv.utils.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="coreroot\connections.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="coreroot\ioc.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="views\extinstaller\extinstaller.js" />
+    <Content Include="views\extinstaller\index.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="extensions\bxltester\autocompile.brail" />
+    <None Include="extensions\bxltester\bxltester.boo" />
+    <None Include="extensions\bxltester\manifest.bxl" />
+    <None Include="extensions\bxltester\widgets.bxl" />
+    <None Include="extensions\extendedtextarea\manifest.bxl" />
+    <None Include="extensions\extendedtextarea\widgets.bxl" />
+    <None Include="extensions\filemanager\.bak\browser_files.brail\YYYY-03-04-12-00-05-UGMK_sfo.brail" />
+    <None Include="extensions\filemanager\.bak\browser_files.brail\YYYY-03-04-12-00-34-UGMK_sfo.brail" />
+    <None Include="extensions\filemanager\browser.brail" />
+    <None Include="extensions\filemanager\browser_files.brail" />
+    <None Include="extensions\filemanager\editor.brail" />
+    <None Include="extensions\filemanager\index.brail" />
+    <None Include="extensions\filemanager\manifest.bxl" />
+    <None Include="extensions\filemanager\widgets.bxl" />
+    <None Include="extensions\hibernatedll\hibernatedll.boo" />
+    <None Include="extensions\hql\execute.brail" />
+    <None Include="extensions\hql\hql.boo" />
+    <None Include="extensions\hql\index.brail" />
+    <None Include="extensions\hql\manifest.bxl" />
+    <None Include="extensions\hql\widgets.bxl" />
+    <None Include="extensions\sql\connections.brail" />
+    <None Include="extensions\sql\connection_button.brail" />
+    <None Include="extensions\sql\databases.brail" />
+    <None Include="extensions\sql\database_button.brail" />
+    <None Include="extensions\sql\manifest.bxl" />
+    <None Include="extensions\sql\sql.boo" />
+    <None Include="extensions\sql\widgets.bxl" />
+    <None Include="extensions\systools\ajaxstatus.brail" />
+    <None Include="extensions\systools\copyright.brail" />
+    <None Include="extensions\systools\manifest.bxl" />
+    <None Include="extensions\systools\ping.brail" />
+    <None Include="extensions\systools\security.brail" />
+    <None Include="extensions\systools\shortresult.brail" />
+    <None Include="extensions\systools\widgets.bxl" />
+    <None Include="extensions\toolbar\button.brail" />
+    <None Include="extensions\toolbar\htmlheader.brail" />
+    <None Include="extensions\toolbar\manifest.bxl" />
+    <None Include="extensions\toolbar\statusbar.brail" />
+    <None Include="extensions\toolbar\tab.brail" />
+    <None Include="extensions\toolbar\title.brail" />
+    <None Include="extensions\toolbar\toolbar.brail" />
+    <None Include="extensions\toolbar\widgets.bxl" />
+    <None Include="extensions\twitconsole\check.brail" />
+    <None Include="extensions\twitconsole\popup.brail" />
+    <None Include="extensions\twitconsole\manifest.bxl" />
+    <None Include="extensions\twitconsole\sendform.brail" />
+    <None Include="extensions\twitconsole\twitconsole.boo" />
+    <None Include="extensions\twitconsole\widgets.bxl" />
+    <None Include="extensions\ugmkview\manifest.bxl" />
+    <None Include="extensions\ugmkview\ugmklogo.brail" />
+    <None Include="extensions\ugmkview\widgets.bxl" />
+    <None Include="mvcroot\Web.config" />
+    <Content Include="coreroot\Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="views\filemanager\search.brail" />
+    <None Include="views\layouts\default.brail" />
+    <None Include="views\sysinfo\controllers.brail" />
+    <None Include="views\layouts\widgetAjax.brail" />
+    <None Include="views\layouts\widgets.brail" />
+    <None Include="views\layouts\widgetServlet.brail" />
+    <None Include="views\layouts\widgetStatic.brail" />
+    <None Include="views\layouts\widgetView.brail" />
+    <Content Include="views\notauthorized\show.brail">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="views\sysinfo\hnclasses.brail" />
+    <None Include="views\sysinfo\hncfgs.brail" />
+    <None Include="views\sysinfo\models.brail" />
+    <None Include="views\sysinfo\dlls.brail" />
+    <None Include="views\sysinfo\widgets.brail" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>del $(TargetPath)
+del $(TargetDir)\$(TargetName).pdb
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

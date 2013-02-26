@@ -1,0 +1,11 @@
+﻿#pragma boo
+defines :
+	result as (System.Object)
+bml :
+	foreach i=result :
+		prepare :
+			fullname = (i.GetType() as System.Type).FullName
+			aname = (i.GetType() as System.Type).Assembly.GetName().Name
+		astable "sysinfo controllers" :
+			heads  "Тип", "Сборка"
+			cells fullname, aname 

@@ -1,0 +1,106 @@
+﻿<%
+//
+//			ВНИМАНИЕ - ДАННЫЙ VIEW ПОСТАВЛЯЕТСЯ В СОСТАВЕ БИБЛИОТЕКИ КОНТРОЛЛЕРА
+//			ВНЕСЕННЫЕ ВАМИ ИЗМЕНЕНИЯ БУДУТ ПОТЕРЯНЫ В СЛУЧАЕ ПЕРЕУСТАНОВКИ БИБЛИОТЕКИ
+//			ИЛИ ОБНОВЛЕНИЯ	
+import Comdiv from "Comdiv.dll"
+import Comdiv.__Extensions as ex
+%>
+<style type="text/css">
+	table{border-collapse:collapse}
+	td{border:solid 1px black; padding:5px;}
+	
+	tr.Dangerous td {background-color:Red}
+	tr.Developer {font-style:italic}
+	tr.Admin, tr.Dangerous{font-weight:bold}
+	tr.DataLoss, tr.AppHang{background-color:#FF9999;}
+	tr.Public , tr.NonCritical {background-color:#99FF99;}
+	tr.dynamic td {border:dashed 3px #black;}
+</style>
+<h1>Контроллеры</h1>
+<table>	
+	<thead>
+		<tr>
+			
+			<th>Ареа</th>
+			<th>Контроллер</th>
+			<th>Действие</th>
+			<th>Опасность</th>
+			<th>Роль</th>
+			<th>Описание</th>
+			<th>Сигнатура</th>
+			<th>Тип</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		<%
+			i = true
+		for c in controllers: 
+			d = desc(c)
+			
+			for a in d.Actions:
+				try:
+				i = not i
+				meta = null
+				try:
+					meta = getmeta(a.Value)
+				except:
+					meta = getmeta(a.Value[0])
+				end
+			%>
+			<tr class="${i} ${meta.ActionSeverity} ${meta.ActionRole}">
+				
+				<td>${c.Area}</td>
+				<td>${c.Name}</td>
+				<td>${a.Key}</td>
+				<td>${meta.ActionSeverity}</td>
+				<td>${meta.ActionRole}</td>
+				<td>${meta.Description}</td>
+				<td>
+					<%try:%>
+					<%if a.Value isa System.Collections.ArrayList:
+					for m in a.Value :%>
+					${getsyg(m)}<br/>
+					<%end
+					%>
+					<%else:%>
+						${getsyg(a.Value)}
+						
+					<%end%>
+					<%except:%>
+						нетиповая сигнатура
+					<%end%>
+				</td>
+				<td>${cast(System.Type,c.ControllerType).FullName}</td>
+			</tr>
+		<%
+			except:	
+				%>
+					<tr><td colspan="8">нетиповая сигнатура</td></tr>
+				<%
+			end
+			end 
+		end%>
+				<%
+			i = true
+		for d in dynamics: 
+	
+				i = not i
+                  meta = getvmeta(d)
+			%>
+			<tr class="${i} ${meta.ActionSeverity} ${meta.ActionRole} dynamic">
+				
+				<td></td>
+				<td></td>
+				<td>${d.ActionName}</td>
+				<td>${meta.ActionSeverity}</td>
+				<td>${meta.ActionRole}</td>
+				<td>${meta.Description}</td>
+				<td></td>
+				<td>${cast(System.Type,d.ControllerType).FullName}</td>
+			</tr>
+		<%end%>
+
+	</tbody>
+</table>

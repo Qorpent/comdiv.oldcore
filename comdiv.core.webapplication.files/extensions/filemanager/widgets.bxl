@@ -1,0 +1,31 @@
+﻿global _FMURL : "/filemanager/index"
+
+tab files, "Файл", comment="Работа с файловой системой" 
+
+button tools_file_manager,  "Файловый менеджер", comment="Открывает менеджер файлов на новой странице", image="filemanager/open", quick="FM" : """
+	window.open(Ajax.siteroot+'/filemanager/index.rails?_layout=default', '_blank');
+"""
+
+resources urlregex=_FMURL, idx=100 : "filemanager"
+
+widget file_manager_browser , "Браузинг, поиск файлов", position="bodyleft", view="/filemanager/browser",urlregex=_FMURL
+widget file_manager_editor , "Редактор файлов", position="bodyheader", view="/filemanager/editor",urlregex=_FMURL
+button files_new , "Новый", comment="Создает новый файл (Ctrl-N)", image="filemanager/new",urlregex=_FMURL : """
+	zeta.files.editor.create();
+"""
+button files_save , "Сохранить", comment="Сохраняет текущий файл (Ctrl-S)", image="filemanager/save",urlregex=_FMURL : """
+	zeta.files.editor.save();
+"""
+button files_saveall , "Сохранить все", comment="Сохраняет все не сохраненные файлы (Ctrl-Shift-S)", image="filemanager/saveall",urlregex=_FMURL : """
+	zeta.files.editor.saveall();
+"""
+button files_reload , "Перезагрузить", comment="Перегружает исходный файл системы (Ctrl-R)", image="filemanager/reload" ,urlregex=_FMURL: """
+	zeta.files.editor.reload();
+"""
+button files_closeall , "Закрыть все", comment="Закрывает все открытые файлы (Ctrl-Shift-Q)", image="filemanager/closeall",urlregex=_FMURL : """
+	zeta.files.editor.closeall();
+"""
+button files_executescript , "Выполнить скрипт", comment="Выполнить скрипт", image="filemanager/executescript",urlregex=_FMURL : """
+	zeta.files.executescript(null,null,!event.shiftKey);
+"""
+

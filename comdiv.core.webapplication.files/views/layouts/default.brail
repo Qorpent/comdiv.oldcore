@@ -1,0 +1,90 @@
+﻿<%
+import Comdiv.Application from Comdiv.Core
+defines :
+	widgets as WidgetCollection
+end
+if null == widgets :
+	widgets = myapp.widgets.GetMyWidgets()
+end
+%><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
+		<script type="text/javascript" src="${me.getJs('prototype')}"></script>
+		<script type="text/javascript" src="${me.getJs('scriptaculous')}"></script>
+		<script type="text/javascript" src="${me.getJs('ajaxupload')}"></script>
+		<script type="text/javascript" src="${me.getJs('formhelper')}"></script>
+		<script type="text/javascript"> 
+			Ajax.siteroot = "${siteroot}";
+			var _siteroot = "${siteroot}";				
+			var zeta = {}; 
+			var comdiv = zeta;
+			var Zeta = zeta;
+			zeta.application = {};
+			zeta.application.controller = "${controller.Name.ToLower()}"
+			zeta.application.action = "${controller.Action.ToLower()}"
+		</script>
+		<script type="text/javascript" src="${me.getJs('comdiv.application')}"></script>
+		<script type="text/javascript" src="${me.getJs('comdiv.fluentajax')}"></script>
+		<script type="text/javascript" src="${me.getJs('comdiv.ui')}"></script>
+		<script type="text/javascript" src="${me.getJs('comdiv.layout')}"></script>
+		<script type="text/javascript" src="${me.getJs('comdiv.wiki')}"></script>
+		<link rel="stylesheet" type="text/css" href="${me.getCss('comdiv.layout')}"></link>
+		<link rel="stylesheet" type="text/css" href="${me.getCss('proto.menu')}"></link>
+		<script type="text/javascript" src="${me.getJs('comdiv.profile')}"></script>
+		<script type="text/javascript" src="${me.getJs('comdiv.modal')}"></script>
+		<script type="text/javascript" src="${me.getJs('proto.menu')}"></script>
+		
+		<%sub widgets,{@widgets : widgets, @position : WidgetPosition.HtmlHeader, @nodiv : true}%>
+		
+    </head>
+    <body>
+	
+    <div id="zlt_header">
+    	<div id="zlt_header_left">
+			<%sub widgets,{@widgets : widgets, @position : WidgetPosition.HeaderLeft}%>
+		</div>
+		<div id="zlt_header_right">
+			<%sub widgets,{@widgets : widgets, @position : WidgetPosition.HeaderRight}%>
+		</div>
+		<div id="zlt_header_center">
+			<%sub widgets,{@widgets : widgets, @position : WidgetPosition.HeaderCenter}%>
+		</div>
+	</div>
+	<div id="zlt_content">
+		<div id="zlt_content_left">
+			<%sub widgets,{@widgets : widgets, @position : WidgetPosition.BodyLeft}%>
+		</div>
+		<div id="zlt_content_right">
+			<%sub widgets,{@widgets : widgets, @position : WidgetPosition.BodyRight}%>
+		</div>
+		<div id="zlt_content_center">
+			<div id="zlt_content_center_header">
+				<%sub widgets,{@widgets : widgets, @position : WidgetPosition.BodyHeader}%>
+			</div>
+			<div id="zlt_content_center_content">
+				<div id="zlt_content_center_content_main">
+					${ChildOutput}
+				</div>
+				<div id="zlt_content_center_content_extension"></div>
+			</div>
+			<div id="zlt_content_center_footer">
+				<%sub widgets,{@widgets : widgets, @position : WidgetPosition.BodyFooter}%>
+			</div>
+		</div>
+	</div>
+	<div id="zlt_footer">
+		<div id="zlt_footer_left">
+			<%sub widgets,{@widgets : widgets, @position : WidgetPosition.FooterLeft}%>
+		</div>
+		<div id="zlt_footer_right">
+			<%sub widgets,{@widgets : widgets, @position : WidgetPosition.FooterRight}%>
+		</div>
+		<div id="zlt_footer_center">
+			<%sub widgets,{@widgets : widgets, @position : WidgetPosition.FooterCenter}%>
+		</div>
+	</div>
+	<div id="autocompleter"></div>
+    </body>
+</html>

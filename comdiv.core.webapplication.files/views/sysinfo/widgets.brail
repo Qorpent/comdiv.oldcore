@@ -1,0 +1,21 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	result as (Widget)
+bml :
+	foreach i=result :
+		astable "sysinfo widgets" :
+			heads  "Код", "Имя", "Расширение", "Тип", "Позиция", "Роли",  "Фильтр", "Пояснение", "Код wiki", "Есть wiki", "Прочее"
+			cells i.Code, i.Name, i.Extension, i.Type, i.Position
+			cell :
+				for r in i.Roles:
+					output "${r}; "
+			cells  i.UrlRegex, i.Comment
+			cell :
+				if i.HasDoc():
+					a href="#", onclick="zeta.wiki.open('${i.GetDocCode()}');return false;":
+						output i.GetDocCode()
+				else :
+					a href="${siteroot}/wiki/edit.rails?_layout=default&code=${i.GetDocCode()}", target="_blank":
+						output i.GetDocCode()
+			cells i.HasDoc(), "img=${i.Image}, view=${i.View}, specclass=${i.SpecClass}, onclick=${i.OnClick}"

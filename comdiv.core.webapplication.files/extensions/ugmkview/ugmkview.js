@@ -1,0 +1,1 @@
+var zeta = (undefined != zeta) ? zeta : {};zeta.ugmkview = (undefined != zeta.ugmkview) ? zeta.ugmkview : {};Object.extend(zeta.ugmkview, {		init : function() {		},	});Event.observe(window, 'load', function(){	zeta.ugmkview.init();});

@@ -1,0 +1,24 @@
+﻿#pragma boo
+import Comdiv.Persistence from Comdiv.Core
+defines :
+	result as SqlBatchResult
+bml:
+	div sql_tables :
+		h2: "Результаты"
+		for t in result.ResultSet :
+			table sql_result_table, cellspacing="0", cellpadding="1" :
+				thead :
+					tr :
+						for c in t.Columns :
+							th : "${c.Title}"
+				tbody :
+					for r in t.Rows :
+						tr :
+							for v in r.Values :
+								td : "${v}"					
+	div sql_log :
+		h2 : "Журнал"
+		for m in result.Log :
+			p : "${m}"
+	
+	

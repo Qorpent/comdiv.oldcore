@@ -1,0 +1,10 @@
+﻿col 	IsActiveCondition , hidden=true
+col	ResultCondition, hidden=true
+col	StartTimeCondition, hidden=true
+col	Parent, "Тип", types='/AppType/', view='/hql/lookup', lookuptype='AppType'
+col	Type , "Тип", types='/App/', view='/hql/lookup', lookuptype='AppType'
+col	Server , "Сервер", types='/App/', view='/hql/lookup', lookuptype='Server'
+col	Config , "Конфигурация", types='/Server/App/AppType/TestProvider/', view='/hql/richtext'
+col	Commands, "Комманды", types='/AppType/', view='/hql/richtext'
+col	Process, "Процесс", view='/hql/lookup', lookuptype='Process'
+col     Class , "Класс", types='/TestProvider/'

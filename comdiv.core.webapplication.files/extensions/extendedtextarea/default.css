@@ -1,0 +1,73 @@
+.numeration {
+	width: 40px;
+	background-color: #eeeeee;
+	color: #666666 !important;
+	position: absolute;
+	margin-left: 1px;
+	margin-top: 22px;
+	border: none;
+	border-right: 1px solid #cccccc;
+	-moz-user-select: none;
+	user-select: none;
+	overflow: hidden;
+	padding-right: 3px;
+	text-align: right;
+	z-index: 500;
+}
+
+.extended {
+	padding-left: 42px;
+	font-size: 13px;
+}
+
+.textarea-toolbar {
+	height: 20px;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.03, rgb(255,255,255)),
+		color-stop(0.15, rgb(233,233,233)),
+		color-stop(0.7, rgb(245,245,245)),
+		color-stop(0.88, rgb(255,255,255))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 3%,
+		rgb(233,233,233) 15%,
+		rgb(245,245,245) 70%,
+		rgb(255,255,255) 88%
+	);
+	padding: 0px 2px 0px 2px;
+}
+
+.textarea-container {
+	border : 1px solid #CCCCCC;
+}
+
+.textarea-toolbar-button {
+	width: 16px;
+	height: 16px;
+	float: right;
+	margin-left: 2px;
+	margin-right: 1px;
+	margin-top: 2px;
+	border : none;	
+}
+
+.decsize {
+	background: url('ico02.png') no-repeat;
+}
+
+.incsize {
+	background: url('ico01.png') no-repeat;
+}
+
+div.textarea-toolbar-button:hover {
+	margin-top: 1px;
+	margin-left: 1px;
+	margin-right: 0px;
+	-moz-border-radius : 3px;
+	border-radius : 3px;
+	border : solid 1px #CCCCCC;
+}

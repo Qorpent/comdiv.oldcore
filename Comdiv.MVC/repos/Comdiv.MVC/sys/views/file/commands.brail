@@ -1,0 +1,14 @@
+﻿<%#fluent%>
+${jsref("file.open('${file.Code}')","Открыть")}
+${jsref("file.setname('${file.Code}')","Обновить")}
+<%if file.Tags :
+	cmds = file.Split('|')
+	for c in cmds :
+		cmd = c.Split(':')
+		cname = cmd[0]
+		cjs = cmd[1]
+%>
+		${jsref(cjs,cname)}
+<%end
+end%>
+

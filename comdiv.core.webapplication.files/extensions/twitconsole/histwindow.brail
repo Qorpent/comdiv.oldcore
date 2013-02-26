@@ -1,0 +1,5 @@
+#pragma boo
+bml :
+	div "twitter-history", id="twitter_console_history" :
+		div "twitter-closer", onclick="zeta.twit.history.hide()" : "x"
+		div "twitter-history-inner", id="twitter_console_inner"

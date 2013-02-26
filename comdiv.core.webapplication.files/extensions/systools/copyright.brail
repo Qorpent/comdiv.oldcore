@@ -1,0 +1,4 @@
+﻿#pragma boo
+bml :
+	div "status-copyright" , title="Рабочая группа Comdiv, использованные авторские технологии comdiv.application.framework, zeta.system, весь исхоный код открытый, Apache License 2.0":
+		output """© ООО "Медиа технологии" 2007-${System.DateTime.Today.Year}"""

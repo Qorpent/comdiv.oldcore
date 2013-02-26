@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Comdiv.MVC.Resources" GeneratedClassName="IoCNames">
+  <Profiles />
+  <Settings>
+    <Setting Name="Report_DefaultLoader" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">comdiv.mvc.report.defaultrequestloader</Value>
+    </Setting>
+    <Setting Name="Report_DefaultInitiator" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">comdiv.mvc.report.defaultrequestinitiator</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

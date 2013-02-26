@@ -1,0 +1,51 @@
+﻿<%
+//
+//			ВНИМАНИЕ - ДАННЫЙ VIEW ПОСТАВЛЯЕТСЯ В СОСТАВЕ БИБЛИОТЕКИ КОНТРОЛЛЕРА
+//			ВНЕСЕННЫЕ ВАМИ ИЗМЕНЕНИЯ БУДУТ ПОТЕРЯНЫ В СЛУЧАЕ ПЕРЕУСТАНОВКИ БИБЛИОТЕКИ
+//			ИЛИ ОБНОВЛЕНИЯ	
+import Comdiv from "Comdiv.dll"
+import Comdiv.__Extensions as ex
+%>
+<style type="text/css">
+	table{border-collapse:collapse}
+	td{border:solid 1px black; padding:5px;}
+	
+	tr.Dangerous td {background-color:Red}
+	tr.Developer {font-style:italic}
+	tr.Admin, tr.Dangerous{font-weight:bold}
+	tr.DataLoss, tr.AppHang{background-color:#FF9999;}
+	tr.Public , tr.NonCritical {background-color:#99FF99;}
+	tr.dynamic td {border:dashed 3px #black;}
+</style>
+<h1>Правила ACL</h1>
+<table>	
+	<thead>
+		<tr>
+			<th>Тип</th>
+			<th>Актив</th>
+			<th>Токен</th>
+			<th>Принципал</th>
+			<th>Разрешения</th>
+			<th>Система</th>
+			<th>От</th>
+			<th>До</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		<%for r in rules:%>
+			<tr>
+			<td>${r.RuleType}</td>
+			<td>${r.Active}</td>
+			<td>${r.TokenMask}</td>
+			<td>${r.PrincipalMask}</td>
+			<td>${r.Permissions}</td>
+			<td>${r.System}</td>
+			<td>${r.StartDate}</td>
+			<td>${r.EndDate}</td>
+			<td>${r.Evidence}</td>
+		</tr>
+		<%end%>
+
+	</tbody>
+</table>

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC39D6D0-2467-4DD5-A53E-92D580B60038}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Castle.MonoRail.Views.Brail</RootNamespace>
+    <AssemblyName>Castle.MonoRail.Views.Brail</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MONORAIL,BRAILFACTORY LIB2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>TRACE;MONORAIL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TOTALTEST|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MONORAIL</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\MIGRATION\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LIB2,MONORAIL</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)'=='MIGRATION'">
+    <Reference Include="anrControls.Markdown.NET">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\anrControls.Markdown.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Extensions">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\Boo.Lang.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Interpreter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\Boo.Lang.Interpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Framework">
+      <HintPath>..\..\exras\lib2\Castle.MonoRail.Framework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'!='MIGRATION'">
+    <Reference Include="anrControls.Markdown.NET">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\anrControls.Markdown.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Extensions">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\Boo.Lang.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Interpreter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\Boo.Lang.Interpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MonoRail.Framework">
+      <HintPath>..\..\exras\lib\Castle.MonoRail.Framework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\branch\new\Comdiv.Brail\BaseBrailClassesAddins\XBooViewEngine.cs">
+      <Link>XBRAIL\XBooViewEngine.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Attributes\HtmlAttribte.cs" />
+    <Compile Include="Attributes\MarkdownAttribute.cs" />
+    <Compile Include="Attributes\RawAttribute.cs" />
+    <Compile Include="BooViewEngine.cs" />
+    <Compile Include="BooViewEngineOptionsBase.cs" />
+    <Compile Include="BrailWikiBuilder.cs" />
+    <Compile Include="IgnoreNull.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MonoRailViewEngineOptions.cs" />
+    <Compile Include="BrailBase.cs" />
+    <Compile Include="BrailConfigurationSection.cs" />
+    <Compile Include="BrailJSElementGenerator.cs" />
+    <Compile Include="BrailJSGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BrailViewComponentContext.cs" />
+    <Compile Include="DslWrapper.cs" />
+    <Compile Include="HtmlExtension.cs" />
+    <Compile Include="IDslLanguageExtension.cs" />
+    <Compile Include="MONORAILBrailTypeFactory.cs" />
+    <Compile Include="StandaloneBooViewEngine.cs" />
+    <Compile Include="Macros\CodeBuilderHelper.cs" />
+    <Compile Include="Macros\ComponentMacro.cs" />
+    <Compile Include="Macros\ComponentNaming.cs" />
+    <Compile Include="Attributes\OutputMethodAttribute.cs" />
+    <Compile Include="Macros\SectionMacro.cs" />
+    <Compile Include="Macros\DslMacro.cs" />
+    <Compile Include="ResourceToDuck.cs" />
+    <Compile Include="ReturnValueVisitor.cs" />
+    <Compile Include="MONORAILTransformToBrailStep.cs" />
+    <Compile Include="ViewStatistics.cs" />
+    <Compile Include="WikiBrailBase.cs" />
+    <Compile Include="XBRAIL\IEvaluator.cs" />
+    <Compile Include="XmlExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Extensibility\Comdiv.Extensibility.csproj">
+      <Project>{C1944938-B798-478A-BA1C-FDA8BA152FF3}</Project>
+      <Name>Comdiv.Extensibility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>mkdir  $(TargetDir)..\artifacts &amp; xcopy $(TargetPath)  $(TargetDir)..\artifacts /s/d/y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

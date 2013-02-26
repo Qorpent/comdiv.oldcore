@@ -1,0 +1,5 @@
+#pragma boo
+bml :
+	div "twitter-popup", id="twitter_console_popup" :
+		div "twitter-closer", onclick="zeta.twit.popup.hide()" : "x"
+		div "twit-popup-inner"

@@ -1,0 +1,41 @@
+﻿
+
+<div id="impersonator-part">
+    <%if impersonated: %>
+        <form id="deimpersonate-form" action="${siteroot}/sys/impersonation/deimpersonate.rails">
+        <input id="ret-url-value-d" type="hidden" name="retUrl" value="" />
+    </form>
+     <a href="#" onclick="document.getElementById('deimpersonate-form').submit();return false;">Вернуться в свой Логин</a>
+    <script type="text/javascript">
+            document.getElementById('ret-url-value-d').value=document.location;
+            
+        </script>   
+    <%else :%>
+    <%if isadmin: %>
+    <p>Зайти от имени...</p>
+    <form id="root-form" action="${siteroot}/sys/impersonation/promoteToRoot.rails">
+        <input id="ret-url-value-r" type="hidden" name="retUrl" value="" />
+    </form>
+    <form id="impersonate-form" action="${siteroot}/sys/impersonation/impersonate.rails">
+        <input id="ret-url-value-i" type="hidden" name="retUrl" value="" />
+        <table class="noborder">
+            <tr>
+                <td>Логин:</td>
+                <td><input style="font-size:8pt;" type="text" name="userName" /></td>
+            </tr>
+            <tr>
+                <td>Роль:</td>
+                <td><input style="font-size:8pt;" type="text" name="roleName" /></td>
+            </tr>
+        </table>
+         
+    </form>
+    <a href="#" onclick="document.getElementById('impersonate-form').submit();return false;">Войти</a>,  <a href="#" onclick="document.getElementById('root-form').submit();return false;">Войти как ROOT</a>
+    <script type="text/javascript">
+            document.getElementById('ret-url-value-i').value=document.location;
+            document.getElementById('ret-url-value-r').value=document.location;
+        </script>
+        <%end %>   
+    <%end %>
+    
+</div>

@@ -1,0 +1,6 @@
+﻿#pragma boo
+defines :
+	databases as (string)
+bml:
+	for db in databases :
+		option : "${db}"

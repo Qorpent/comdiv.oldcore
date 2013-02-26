@@ -1,0 +1,14 @@
+﻿<table class="folder">
+	<tr>	
+		<th>Имя</th>
+		<th>Путь</th>
+		<th>Команды</th>
+	</tr>
+<%for f in files:%>
+	<tr>
+		<th>${f.Name}</th>
+		<th>${f.Code}</th>
+		<th>**commands{@file:f}</th>
+	</tr>
+<%end%>
+</table>

@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Comdiv.MVC.Resources" GeneratedClassName="ControllerRuleStrings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Context_MvcContext" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mvc_context_descriptor</Value>
+    </Setting>
+    <Setting Name="Context_Result" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mvc_rules_result</Value>
+    </Setting>
+    <Setting Name="Xml_Area" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">area</Value>
+    </Setting>
+    <Setting Name="Xml_Controller" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">controller</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

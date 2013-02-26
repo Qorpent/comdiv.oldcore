@@ -1,0 +1,12 @@
+#pragma boo
+import Comdiv.Model from Comdiv.Core
+import System.Text.RegularExpressions;
+
+defines :
+	result as (Entity)
+bml :
+	foreach i=result :
+		div "twit-element" :
+			div "twit-usr" : "${i.Code}"
+			div "twit-date" : "${/\d+:\d+:\d+/.Match(i.Name).Value}"
+			div "twit-text" : "${i.Comment}"

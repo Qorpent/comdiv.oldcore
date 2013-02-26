@@ -1,0 +1,9 @@
+﻿#pragma boo
+bml:
+	div "file_manager_browser", id="file-manager-browser" :
+		div toolbar , id="file-manager-browser-toolbar" :
+			div fmfilters, id="fmfilters"
+			input search, id="file-manager-browser-search"
+			div searchbutton, id="file-manager-browser-search-button"
+		div files, id="file-manager-browser-files"
+		

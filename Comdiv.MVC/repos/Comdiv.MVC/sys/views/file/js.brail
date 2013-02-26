@@ -1,0 +1,17 @@
+﻿<script type="text/javascript">
+	var file = {
+		open : function(code){
+			window.open(_siteroot+"/"+code,"_blank");
+		},
+		setname : function(code){
+			$('upload_name').value = code;
+		},
+		clear :function(){
+			$('exec_result').update('Результаты выполнения командного файла');
+		},
+		exec : function(){
+			var params = $('exec_form').serialize();
+			new Ajax.Updater($('exec_result'),"${siteroot}/file/exec.rails",{parameters:params});
+		}
+	}
+</script>

@@ -1,0 +1,27 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	widgets as WidgetCollection
+tabs = widgets.GetTabs()
+if tabs.Length != 0:
+	bml :
+		div "main-toolbar", id="main-toolbar":
+			div "main-toolbar-static", id="main-toolbar-static" :
+				div "main-toolbar-quick"
+				div "main-toolbar-tabs", id="main-toolbar-tabs" :
+					for tab in tabs :
+						if widgets.GetButtons(tab).Length > 0 :
+							sub tab, {@tab : tab}
+				div "main-toolbar-title" :
+					if widgets.ContainsKey("title") :
+						for t in widgets["title"] :
+							div "main-title-element ${t.SpecClass}", title="${t.Comment}" :
+								OutputSubView(t.View, {@widget : t})
+					output "&nbsp;"
+			div "main-toolbar-dynamic", id="main-toolbar-dynamic" :
+				div style="clear:both"
+				for tab in tabs :
+					div  "main-toolbar-expand", id = "main-toolbar-expand-${tab.Code}" , tab="${tab.Code}" :
+						for button in widgets.GetButtons(tab) :
+							sub button, {@button : button}
+				div style="clear:both"

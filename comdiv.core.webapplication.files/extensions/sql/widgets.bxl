@@ -1,0 +1,26 @@
+﻿global _SHSQLURL : "/(s|h)ql/index"
+global _SSQLURL : "/sql/index"
+
+tab bd, "Базы данных", comment="Работа с базами данных" 
+
+button tools_sql,  "Консоль SQL", comment="Открывает консоль SQL на новой странице", image="sql/open", quick="SQ" : """
+	window.open(Ajax.siteroot+'/sql/index.rails?_layout=default', '_blank');
+"""
+
+resources idx=100 : "sql"
+
+button bd_execute, "Выполнить", image="sql/execute", urlregex=_SSQLURL, comment="Выполняет SQL-запрос в укзанной базе данных" : """
+	zeta.sql.execute()
+"""
+
+button bd_system, "База данных", comment="Указывает текущее соединение", view="/sql/database_button" , urlregex=_SHSQLURL, position=statusbar, idx=1
+button bd_connection, "Управление соединениями", comment="Инструмент создания и удаления подключения", view="/sql/connection_button" , urlregex=_SHSQLURL
+button bd_resources, "Ресурсы", comment="Выполнение внедренных скриптов библиотек", image="sql/resource" , urlregex=_SHSQLURL : """
+	zeta.sql.getresources(!event.shiftKey);
+"""
+button files_sql_system, "База данных", comment="Указывает текущее соединение", view="/sql/database_button" , urlregex=_FMURL,  position=statusbar, idx=1
+button files_sql_execute, "Выполнить SQL", image="sql/execute", urlregex=_FMURL, comment="Выполняет SQL-запрос в укзанной базе данных" : """
+	zeta.sql.execute_file();
+"""
+
+

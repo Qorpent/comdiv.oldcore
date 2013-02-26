@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{423FCD23-7A6E-42DC-BDDE-B0BCAF1A5B36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comdiv.Brail.Test</RootNamespace>
+    <AssemblyName>Comdiv.Brail.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LIB2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\MIGRATION\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LIB2</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)'=='MIGRATION'">
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <HintPath>..\..\exras\lib2\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <HintPath>..\..\exras\lib2\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Comdiv.QWeb" Condition="'$(TEAMCITY)'=='true'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\qweb\build\comdiv.qweb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'!='MIGRATION'">
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <HintPath>..\..\exras\lib\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <HintPath>..\..\exras\lib\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Comdiv.QWeb" Condition="'$(TEAMCITY)'=='true'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\qweb\build\comdiv.qweb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BooXml\StrangeBugTest_cannot_reparse_INTERPOLATIONS.cs" />
+    <Compile Include="Features\SubviewPropertyExportingTest.cs" />
+    <Compile Include="Features\ViewCachingTest.cs" />
+    <Compile Include="Framework\BrailCompilerBasedTestBase.cs" />
+    <Compile Include="Framework\BrailCompilerTest.cs" />
+    <Compile Include="Framework\OutputWriteUnificationTest.cs" />
+    <Compile Include="Macroses\BmlTemplatingTest.cs" />
+    <Compile Include="Macroses\BmlTest.cs" />
+    <Compile Include="Macroses\BrailMacroTestBase.cs" />
+    <Compile Include="Macroses\CachekeyMacroTest.cs" />
+    <Compile Include="Macroses\CallMacroTest.cs" />
+    <Compile Include="Macroses\CatchMacroTest.cs" />
+    <Compile Include="Macroses\DefinebrailpropertyMacroTest.cs" />
+    <Compile Include="Macroses\ExportMacroTest.cs" />
+    <Compile Include="Macroses\ForEachMacroTest.cs" />
+    <Compile Include="Macroses\OutputFixesTest.cs" />
+    <Compile Include="Macroses\RealWorlsBmlTest.cs" />
+    <Compile Include="Macroses\SubMacroTest.cs" />
+    <Compile Include="myBrail\MyBrailTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Framework\ViewSourceResolverTest.cs" />
+    <Compile Include="unresolvedbugs\BOOBUG_CannotResolveGenericsOnClosures.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Condition="'$(TEAMCITY)'!='true'" Include="..\..\qweb\Comdiv.QWeb\Comdiv.QWeb.csproj">
+      <Project>{DBA1BC21-6689-4996-971D-C43C85CF9F7E}</Project>
+      <Name>Comdiv.QWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Extensibility\Comdiv.Extensibility.csproj">
+      <Project>{C1944938-B798-478A-BA1C-FDA8BA152FF3}</Project>
+      <Name>Comdiv.Extensibility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcContrib.Comdiv.Brail\MvcContrib.Comdiv.Brail.csproj">
+      <Project>{F8A7E26B-F8B8-44B0-9ACF-5D6D6D45A3CE}</Project>
+      <Name>MvcContrib.Comdiv.Brail</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\qweb\extras\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Comdiv.QWeb" Condition="'$(TEAMCITY)'=='true'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\qweb\build\comdiv.qweb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir  $(TargetDir)..\artifacts &amp; xcopy $(TargetPath)  $(TargetDir)..\artifacts /s/d/y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

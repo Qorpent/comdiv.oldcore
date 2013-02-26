@@ -1,0 +1,35 @@
+﻿#pragma boo
+import System from "System.Core"
+import Comdiv.Reporting
+import Comdiv.Wiki from Comdiv.Core
+import Comdiv.Application from Comdiv.Core
+defines :
+	pages as List[of WikiPage]
+#prepare new "news"
+bml :
+	style : """
+		.wiki {
+			font-size :12pt;
+		}
+		.wiki-link {
+			color : blue;
+			cursor : pointer;
+		}
+		.wiki-createlink {
+			cursor : pointer;
+			border-bottom : dashed 1px black;
+		}
+		.wiki-notexisted {
+			border : solid 1px black;
+		}
+		
+	"""
+	for p in pages :
+		div wiki :
+			h1 : 
+				output "${p.Title}"
+				span style="font-size:8pt" : "  (${p.Code})"
+			if myapp.roles.IsInRole(myapp.usr,"WIKIAUTHOR",true):
+				p : 
+					a href="#", onclick="wiki.edit('${p.Code}');return false;" : "Править эту статью" 
+			output "${p.RenderedContent}"

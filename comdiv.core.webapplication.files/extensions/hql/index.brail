@@ -1,0 +1,30 @@
+﻿#pragma boo
+defines :
+	autoquery as string
+	autosystem as string
+bml:
+	script : """
+		Ajax.from('~/scripts/comdiv.inplacetable.js').eval();
+	"""
+	div hql :
+		output "Параметр 1: "
+		input id="template1" 
+		output "Параметр 2: "
+		input id="template2" 
+		output "Параметр 3: "
+		input id="template3" 
+		br
+		textarea "extended", id=hql_query :
+			output autoquery
+		div id=hql_result
+		script : """
+			Event.observe(window,'load',function(){
+			if('${autosystem}'!=''){
+				zeta.sql.parameters.profile.data.system = '${autosystem}';
+				zeta.sql.updateConnections(function(){
+					zeta.hql.execute();
+				});
+			}
+			});
+		
+		"""

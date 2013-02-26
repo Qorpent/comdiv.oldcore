@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%
+header = 'workspace_header'
+utils = 'utils'
+content = 'workspace_content'
+if IsDefined('workspaceHeader'):
+    header = workspaceHeader
+end
+if IsDefined('workspaceUtils'):
+    utils = workspaceUtils
+end
+if IsDefined('workspaceContent'):
+    content = workspaceContent
+end
+ %>
+<html><head><%OutputSubView(header)%>
+
+</head>
+<body id="application" class="yui-skin-sam ws">
+<script type="text/javascript">
+	var _siteroot = '${siteroot}';
+</script>
+<div id="topcontent"><%OutputSubView(utils)%></div>
+<%OutputSubView(content,{@content:ChildOutput})%>
+</body>
+</html>

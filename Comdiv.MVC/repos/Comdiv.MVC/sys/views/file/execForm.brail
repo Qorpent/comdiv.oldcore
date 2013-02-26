@@ -1,0 +1,11 @@
+﻿<%#fluent%>
+<form id="exec_form" action="${siteroot}/file/exec.rails?asworkspace=1">
+	<h3>Выполнение команды консоли</h3>
+	<textarea id="shell_cmd" name="cmd" rows="10" cols="80">
+	</textarea><br/>
+	${jsref("file.exec()","Выполнить")}
+</form>
+<div id="exec_result">
+	Результаты выполнения командного файла
+</div>
+${jsref("file.clear()","Очистить результаты")}

@@ -1,0 +1,8 @@
+﻿name : "Дефолтное наполнение"
+description : """
+	
+"""
+index
+version : "0.1.0"
+secutity : "Общее"
+target : "Разработка"

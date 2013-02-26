@@ -1,0 +1,45 @@
+.sql textarea  {
+	font-family : Consolas;
+	font-size: 8pt;
+	color : #0000AA;
+}
+
+div.sql_log {
+	float : right;
+}
+
+div.sql_tables {
+	float : left;
+}
+
+#sql_query {
+	width : 400px;
+	height: 300px;
+}
+
+#sql-connection-manager {
+	border-collapse : collapse;
+	text-align: center;
+}
+
+#sql-connection-manager input {
+	font-size:8pt;
+	border : solid 1px #ccc;
+	margin-bottom: 1px;
+}
+
+#sql_connection_add {
+	
+}
+
+#sql_connection_remove {
+	
+}
+
+.main-toolbar-button-main {
+	margin-top: -2px;
+}
+
+.sql_system_main, .sql_database_main {
+	float: left;
+}

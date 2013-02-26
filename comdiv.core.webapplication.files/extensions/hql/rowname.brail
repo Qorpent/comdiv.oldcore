@@ -1,0 +1,13 @@
+#pragma boo
+import Comdiv.Zeta.Model
+import Comdiv.Persistence from Comdiv.Core
+import Comdiv.Model.Interfaces from Comdiv.Core
+defines :
+	p as HqlColumn
+	r as System.Object
+	row as IZetaRow
+row = r as IZetaRow
+bml :
+	img "rowname-padding", level = "${r.Level}", src="../extensions/hql/transparent.png", height="10"
+	div :
+		output row.Name

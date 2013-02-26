@@ -1,0 +1,9 @@
+﻿#pragma boo
+import NHibernate.Mapping from NHibernate
+defines :
+	result as (PersistentClass)
+bml :
+	foreach i=result :
+		astable "sysinfo nhclasses" :
+			heads "Имя","Класс"
+			cells i.EntityName,i.ClassName

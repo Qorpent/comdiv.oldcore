@@ -1,0 +1,15 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	connections as (string) = myapp.sql.GetConnectionNames()
+bml:
+	div "main-toolbar-button-main", style="height: auto;" :
+		div "sql_system_main" :
+			"Система:"
+			select id=sql_system, title="Требуемая строка подклюения" :
+				for c in connections :
+					option : "${c.Trim()}"
+		div "sql_database_main" :
+			"База:"
+			select id=sql_database, title="База данных, в которой будут выполняться запросы"
+	#div "main-toolbar-button-name" : "Система"

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9E47BFD-A66C-43F7-B556-B15F2CBF887A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comdiv.Extensibility.Test</RootNamespace>
+    <AssemblyName>Comdiv.Extensibility.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\tbuild\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIGRATION|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\tbuild\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LIB2</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)'=='MIGRATION'">
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Comdiv.QWeb" Condition="'$(TEAMCITY)'=='true'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\qweb\build\comdiv.qweb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'!='MIGRATION'">
+    <Reference Include="Boo.Lang">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <SpecificVersion>false</SpecificVersion>
+      <HintPath>..\..\qweb\extras\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Comdiv.QWeb" Condition="'$(TEAMCITY)'=='true'">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\qweb\build\comdiv.qweb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Booxml\BooxmlBaseTest.cs" />
+    <Compile Include="Booxml\BooxmlGeneratorTest.cs" />
+    <Compile Include="Booxml\BooxmlParserTest.cs" />
+    <Compile Include="BooCompilerTestBase.cs" />
+    <Compile Include="ExtensionsCompiler\ByCompilerTest.cs" />
+    <Compile Include="ExtensionsCompiler\ByConoleTest.cs" />
+    <Compile Include="ExtensionsCompiler\ByExeTest.cs" />
+    <Compile Include="ExtensionsCompiler\ByTaskTest.cs" />
+    <Compile Include="ExtensionsCompiler\CodeIsCompileableTest.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsFileSourceTest.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsLoaderTest.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsPreprocessorCompilerStepTest.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsPreprocessorTest.cs" />
+    <Compile Include="ExtensionsCompiler\ExtensionsPreprocessorTestBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Condition="'$(TEAMCITY)'!='true'" Include="..\..\qweb\Comdiv.QWeb\Comdiv.QWeb.csproj">
+      <Project>{DBA1BC21-6689-4996-971D-C43C85CF9F7E}</Project>
+      <Name>Comdiv.QWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comdiv.Extensibility\Comdiv.Extensibility.csproj">
+      <Project>{C1944938-B798-478A-BA1C-FDA8BA152FF3}</Project>
+      <Name>Comdiv.Extensibility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir  $(TargetDir)..\artifacts &amp; xcopy $(TargetPath)  $(TargetDir)..\artifacts /s/d/y</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>del $(TargetDir)ByConoleTest.dll
+del $(TargetDir)ByCompilerTest.dll
+del $(TargetDir)ByExeTest.dll
+del $(TargetDir)ByTaskTest.dll
+del $(TargetDir)ByTaskTest.dll
+del $(TargetDir)*.boo</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

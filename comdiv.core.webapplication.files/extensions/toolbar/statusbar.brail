@@ -1,0 +1,12 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	widgets  as WidgetCollection
+
+bml :
+	div "main-statusbar", id="main-statusbar" :
+		div "main-statusbar-dynamic", id="main-statusbar-dynamic" : 
+			if widgets.ContainsKey("statusbar") :
+				for i in widgets["statusbar"] :
+					div "main-statusbar-element ${i.SpecClass}", title="${i.Comment}" :
+						OutputSubView(i.View, {@widget : i})

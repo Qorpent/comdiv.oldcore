@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Администратор ролей</title>
+    <script type="text/javascript" src="../../scripts/qweb/start.js"></script>
+    <script type="text/javascript">
+        qweb.load("~roleeditor/api");
+		qweb.load("~roleeditor/render");
+		qweb.load("~roleeditor/ui");
+    </script>
+	<style type="text/css">
+		table td, table th {
+			border:solid 1px black;
+		}
+		.state_true{
+			background-color : green;
+		}
+	</style>
+	
+</head> 
+<body>
+	<h1>Назначение пользователей</h1>
+	<script type="text/javascript">
+		comdiv.roles.render.matrix();
+	</script>
+</body>
+</html>

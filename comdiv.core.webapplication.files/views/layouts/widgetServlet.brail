@@ -1,0 +1,6 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	widget as Widget
+servlet = widget.CreateServlet()
+servlet.Execute(this, controller)

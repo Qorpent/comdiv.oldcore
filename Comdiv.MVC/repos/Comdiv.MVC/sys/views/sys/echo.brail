@@ -1,0 +1,7 @@
+﻿${url}
+<table>
+	<tr><td colspan="2">Параметры</td></tr>
+	<%for x in params:%><tr><td>${x.Code}</td><td>${x.Name}</td></tr><%end%>
+	<tr><td colspan="2">Заголовки</td></tr>
+	<%for x in headers:%><tr><td>${x.Code}</td><td>${x.Name}</td></tr><%end%>
+</table>

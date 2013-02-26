@@ -1,0 +1,206 @@
+#body {
+	margin: 0px 0px 0px 0px;
+}
+
+/*
+  -------------------------------------------------
+                    Стили шапки
+  -------------------------------------------------
+*/
+
+#zlt_header {
+	clear: both;
+	font-family: "Arial";
+	font-size: 10pt;
+}
+
+#zlt_header_left {
+	float: left;
+}
+input.required{
+	border-left : solid 2px red !important;
+}
+
+#zlt_header_center {
+	margin: 0px 152px 0px 152px;
+}
+
+#zlt_header_center ul.topmenu {
+	list-style-type: none;
+	padding-top: 16px;
+}
+
+#zlt_header_right {
+	float: right;
+}
+
+img {
+	border: none;
+}
+
+
+/*
+  -------------------------------------------------
+              Стили центральной части
+  -------------------------------------------------
+*/
+
+
+#zlt_content  {
+	clear: both;
+	background-position: top left;
+	padding-top: 5px;
+}
+
+#zlt_content_left {
+	float: left;
+	background-color: #ea4d00;
+}
+
+#zlt_content_center {
+	float: left;
+}
+
+#zlt_content_center_header {
+	
+}
+
+#zlt_content_center_content {
+	
+}
+
+#zlt_content_center_content_main {
+}
+
+#zlt_content_center_content_extension {
+	float: right;
+}
+
+#zlt_content_center_footer {
+
+}
+
+#zlt_content_right {
+	float: right;
+	background-color: #ff8040;
+}
+
+
+/*
+  -------------------------------------------------
+                    Стили футера
+  -------------------------------------------------
+*/
+
+
+
+#zlt_footer {
+	background-color: #e6e6e6;
+	clear: both;
+}
+
+#zlt_footer_left {
+	float: left;
+}
+
+#zlt_footer_center {
+	margin: 0px 1px 0px 1px;
+	background-color: #eaeaea;
+}
+
+#zlt_footer_right {
+	float: right;
+}
+
+input.invalid {
+	border: dashed 1px red !important;
+	background-color : #FFCCCC !important;
+}
+
+
+
+.comdiv_modal_dialog {
+			z-index : 1010;
+			padding : 5px;
+			background-color : #FFFFCC;
+			border : solid 3px #9999FF;
+			position:fixed;
+		}
+		.comdiv_modal_dialog.dialog_error {
+			border : solid 3px red;
+			background-color : #FF6666;
+		}
+.comdiv_modal_dialog.dialog_error .comdiv_modal_dialog_handle {
+			background-color:red;
+		}
+.comdiv_modal_dialog.dialog_error .comdiv_modal_dialog_title {
+			color:white;
+		}
+.comdiv_modal_dialog_title{
+		font-size:12pt;
+		font-weight:bold;
+		color:#0000BB;
+		padding-left:2px;
+		max-width:70%;
+}
+.comdiv_modal_dialog_content {
+	border:solid 1px black;
+	margin-top : 3px;
+	margin-bottom : 3px;
+	overflow:auto;
+	padding:3px;
+	background-color:white;
+}
+.comdiv_modal_dialog_closer {
+	float : right;
+}
+
+.comdiv_modal_dialog_handle {
+	width:100%;
+	cursor : pointer;
+	margin-left:1px;
+	margin-right:1px;
+	background-color:#ccccff;
+	
+}
+
+
+div.topbut
+{
+	float: left;
+	margin-right: 5px;
+	padding: 2px;
+	cursor: pointer;
+}
+
+div.topbut a
+{
+	color: black;
+	text-decoration: none;
+}
+
+.promptinput {
+	width : 100%;
+}
+
+
+#autocompleter ul { /*Общие настройки внешнего вида выводимого нами списка*/
+width:300px;
+background-color:white;
+border:1px solid #888;
+list-style-type:none;
+margin:0px;
+padding:0px;
+}
+#autocompleter ul li { /*Внешний вид обычного, не выбранного или не выделенного поля этого списка*/
+display:block;
+margin:0;
+padding:2px;
+cursor:pointer;
+background:none;
+} 
+
+#autocompleter ul li.selected { /*Внешний вид обычного, не выбранного или не выделенного поля этого списка*/
+background-color : #666;
+color:white;
+} 

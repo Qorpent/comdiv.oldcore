@@ -1,0 +1,19 @@
+﻿<div class="ws-me-part">
+    <table class="noborder">
+        <tr>
+            <td>Пользователь:</td>
+            <td>${currentUser}</td>
+        </tr>
+        <tr>
+            <td>Роли:</td>
+            <td>
+              <%for r in roles:%>
+                <%if r==currentRole:%><b><%end%>
+                    ${r}<%if r!='DEFAULT':%>, <%end %>  
+                <%if r==currentRole:%></b><%end%>
+                <%end%>
+              
+            </td>
+        </tr>
+    </table>
+</div>

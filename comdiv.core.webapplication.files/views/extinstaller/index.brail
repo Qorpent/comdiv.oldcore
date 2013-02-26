@@ -1,0 +1,49 @@
+﻿#pragma boo
+import Comdiv.Extensions
+defines :
+	extensions as (ExtensionDescriptor)
+MANIFEST = ""
+bml:
+	html :
+		head :
+			script src="${siteroot}/scripts/prototype.js"
+			script : """ Ajax.siteroot = "${siteroot}" """
+			script src="${siteroot}/scripts/comdiv.fluentajax.js"
+			script src="${myjs}"
+			link href="${mycss}", rel="stylesheet", type="text/css"
+		body :
+			p : 
+				"Внимание, после установки пакетов, не забудьте нажать"
+				a href="${siteroot}/restart/reload.rails", target="_blank" : " очистка"
+			p style="color:red" : 
+				"Внимание, при УДАЛЕНИИ пакетов, не забудьте нажать"
+				a href="${siteroot}/restart/restart.rails", target="_blank" : " перезагрузка"
+
+			input type=button, value="Обновить все", onclick="comdiv.extensions.install()"
+			input type=button, value="Удалить все", onclick="comdiv.extensions.uninstall()"
+			foreach i as ExtensionDescriptor = extensions :
+				prepare :
+					catch MANIFEST :
+						div onclick="$('m_${i.Name}').toggle()" : "Показать/скрыть детали"
+						div id="m_${i.Name}" :
+							foreach p = i.Manifest :
+								astable :
+									cells p.Key, p.Value
+						script : """
+							$('m_${i.Name}').hide();
+						"""
+				astable extensions_table, row=("extension installed_${i.IsInstalled}"), cellspacing="0", cellpadding="1" :
+					heads "Комманды", "Код", "Параметры"
+					cell commands:
+						if i.IsInstalled :
+							input type=button, onclick="comdiv.extensions.install('${i.Name}')", value="Обновить"
+							input type=button, onclick="comdiv.extensions.uninstall('${i.Name}')", value="Удалить"
+							if i.Manifest.ContainsKey("index") :
+								input type=button, onclick="comdiv.extensions.openindex('${i.Name}')", value="Открыть"
+						else :
+							input type=button, onclick="comdiv.extensions.install('${i.Name}')", value="Установить"
+					cell : i.Name
+					cell :
+						output MANIFEST
+			
+			

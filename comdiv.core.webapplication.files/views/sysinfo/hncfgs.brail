@@ -1,0 +1,9 @@
+﻿#pragma boo
+import NHibernate.Mapping from NHibernate
+defines :
+	result as (string)
+bml :
+	foreach i=result :
+		asulist "sysinfo nhcfgs" 
+		onitem :
+			output i

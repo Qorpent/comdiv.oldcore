@@ -1,0 +1,5 @@
+﻿#widget "toolbar-html-header", idx = -100, "Toolbar html header", type="view", view="/toolbar/htmlheader", position=HtmlHeader
+resources idx=20 : "toolbar"
+widget "main-toolbar", "Main toolbar", type="view", view="/toolbar/toolbar", position=HeaderLeft
+widget "main-statusbar", "Statusbar", type="view", view="/toolbar/statusbar", position=FooterLeft
+widget "main-toolbar-title-page", "Раздел, заменяющий заголовок страницы", type=view, view=title, position=title

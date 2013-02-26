@@ -1,0 +1,12 @@
+﻿#pragma boo
+defines :
+	result as IDictionary[of string, (string)]
+bml:
+	ul :
+		for i in result :
+			li :
+				output "${i.Key}"
+				ul :
+					for r in i.Value :
+						li :
+							a href="#", onclick="zeta.sql.executeresource('${i.Key}','${r}')" : "${r}"

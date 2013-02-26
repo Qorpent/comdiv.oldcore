@@ -1,0 +1,3 @@
+﻿#pragma boo
+bml:
+	div "file_manager_editor"

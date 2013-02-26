@@ -1,0 +1,5 @@
+﻿#pragma boo
+bml:
+	div "main-toolbar-button-main default", title="${button.Comment}" :
+		input id="hqlview"
+	div "main-toolbar-button-name" : "${button.Name}"

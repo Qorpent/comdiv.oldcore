@@ -1,0 +1,14 @@
+﻿#pragma boo
+import Comdiv.MAS
+import Comdiv.Application from Comdiv.Core
+try :
+	apps = myapp.storage.Get[of App]("mas",true).All()
+	bml :
+		div "currentapplication", id="currentapplicationdiv" :
+			"Приложение:"
+			select id="currentapplication" :
+				for app in apps :
+					option value="${app.Code}" : "${app.Server.Code}/${app.Name}"
+except e:
+	bml :
+		div title="${e.Message}" : "Ошибка"

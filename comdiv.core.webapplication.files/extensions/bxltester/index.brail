@@ -1,0 +1,21 @@
+﻿#pragma boo
+defines :
+	files as (string)
+bml:
+	table bxl :
+		tr :
+			td :
+				"Имя файла:"
+				input id="bxl_file_name"
+				input type='checkbox', id='bxl_autosave', value='autosave'
+				input bxl_save, type=button, value=Сохранить
+				span id=bxl_saveresult
+				textarea "extended", id="bxl_code", style="overflow:scroll", wrap=off
+			
+			td :
+				"XPath фильтр"
+				input id="bxl_xpath"
+				textarea "extended", id="bxl_result", style="overflow:scroll", wrap=off
+			td valign="top" :								
+				div id=bxl_filelist
+	p: "provided by ${myname}"

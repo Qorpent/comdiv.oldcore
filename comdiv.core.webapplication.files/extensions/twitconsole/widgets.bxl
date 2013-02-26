@@ -1,0 +1,4 @@
+﻿resources roles='TWITCONSOLE_CLIENT' : "twitconsole"
+widget twit_sendconsole , "Отправка твитов", specclass=right, view="/twitconsole/sendform", position=statusbar
+widget twit_popup , "Всплывающее окно твитов", specclass=right, view="/twitconsole/popup", position=statusbar
+widget twit_histwindow, "Окно истории", specclass=right, view="/twitconsole/histwindow", position=statusbar

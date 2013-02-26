@@ -1,0 +1,23 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	widgets as WidgetCollection
+	position as WidgetPosition
+	nodiv as bool 
+key = position.ToString().ToLower()
+if widgets.ContainsKey(key) :
+	myws as (Widget) = widgets[key]
+	bml :
+		for w in myws :
+			widgetview = "widget${w.Type}"
+			if w.CustomView :
+				widgetview = w.CustomView
+			if nodiv :
+				sub @widgetview , {@widget : w}
+			else :
+				div "widget-container widget-${w.Code} ${w.Classes}", id="widget_${w.Code}" , style="${w.Style}" :
+					if w.ShowTitle :
+						div "widget-title" :
+							"${w.Name}"
+					div "widget-inner widget-${w.Code}-inner", id="widget-${w.Code}-inner" :
+						sub @widgetview , {@widget : w}

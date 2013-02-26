@@ -1,0 +1,30 @@
+﻿col Id, "Ид", idx=-100, editable=false, comment="Уникальный технический ключ базы данных"
+col Code, "Код", idx=-90, editable=true, comment="Пользовательский уникальный ключ"
+col Name, "Имя", idx=10, editable=true, comment="Имя элемента данных", view="/hql/richtext", CssStyle="max-width:400px;"
+col Idx, "Индекс", idx=-100, editable=true,  comment= "Порядок в списках"
+col OuterCode, "Вн. код", idx=5, editable=true,  comment= "Внешний код"
+
+col ShortName, "Кр. имя", editable=true, idx =50, comment="Сокращенное название"
+col ShortName, views="/simple/", hidden=true
+col FullName, "Дл. имя",idx=60, editable=true, comment="Полное, развернутое имя объекта"
+col FullName, views="/simple/", editable=true, hidden=true
+
+col Tag, "Теги", idx=70, editable=true, comment="Словарь тегов", view="/hql/richtext"
+col Marks, "Метки", idx=80, editable=true, comment="Строка меток"
+col Groups, "Группы", idx=90, editable=true, comment="Строка групп" 
+
+col Comment, "Комментарий", editable=true, idx=970, CssStyle="max-width:300px;", view="/hql/richtext", CssStyle="max-width:400px;"
+col Usr, "Пользователь", idx=980, editable=true, comment="Общий признак активности записи данных"
+col Usr, views="/simple/", editable=true, hidden=true
+col Version, "Версия", idx=990, editable=true, comment="Дата/время последнего изменения"
+col Version, views="/simple/", editable=true, hidden=true
+col Active, "Активность", idx=1000, editable=true, comment="Общий признак активности записи данных"
+col Active, views="/simple/", editable=true, hidden=true
+col StartDate, "Начало", idx=1010, editable=true, comment="Время 'возникновения' объекта"
+col StartDate, views="/simple/", editable=true, hidden=true
+col EndDate, "Окончание", idx=1020, editable=true, comment="Время 'исчезновения' объекта"
+col EndDate, views="/simple/", editable=true, hidden=true
+
+
+
+col Item , hidden =true

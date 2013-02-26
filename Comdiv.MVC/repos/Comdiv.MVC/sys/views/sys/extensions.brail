@@ -1,0 +1,46 @@
+﻿<%
+//
+//			ВНИМАНИЕ - ДАННЫЙ VIEW ПОСТАВЛЯЕТСЯ В СОСТАВЕ БИБЛИОТЕКИ КОНТРОЛЛЕРА
+//			ВНЕСЕННЫЕ ВАМИ ИЗМЕНЕНИЯ БУДУТ ПОТЕРЯНЫ В СЛУЧАЕ ПЕРЕУСТАНОВКИ БИБЛИОТЕКИ
+//			ИЛИ ОБНОВЛЕНИЯ	
+import Comdiv from "Comdiv.dll"
+import Comdiv.__Extensions as ex
+%>
+<style type="text/css">
+	table{border-collapse:collapse}
+	td{border:solid 1px black; padding:5px;}
+	
+	tr.Dangerous td {background-color:Red}
+	tr.Developer {font-style:italic}
+	tr.Admin, tr.Dangerous{font-weight:bold}
+	tr.DataLoss, tr.AppHang{background-color:#FF9999;}
+	tr.Public , tr.NonCritical {background-color:#99FF99;}
+</style>
+<h1>Расширения</h1>
+<table>	
+	<thead>
+		<tr>			
+			<th>Имя</th>
+			<th>Тип</th>			
+		</tr>
+	</thead>
+	<tbody>
+	    <%for e in reg.Keys:
+			ext = reg[e]
+			if ext==null :
+				t = typeof(System.Object)
+			else:
+				t = reg[e].GetType()
+	        end
+	    %>
+	        <tr>
+	            <td>${e}</td>
+					<%if ext==null:%>
+					<td>NULL</td>
+					<%else:%>
+	            <td>${t.Name} (${t.BaseType},:: <%for i in t.GetInterfaces():%>${i.Name}<%end%>)</td>
+	            <%end%>
+	        </tr>
+	    <%end%>
+	</tbody>
+</table>

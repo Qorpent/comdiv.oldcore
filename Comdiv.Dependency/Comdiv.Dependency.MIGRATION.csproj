@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E58C87C-2522-4AA5-9211-6109305B2D7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comdiv</RootNamespace>
+    <AssemblyName>Comdiv.Dependency</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build2\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LIB2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;LIB2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=0.1.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib2\\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HbmCompiler\HbmBatchCompiler.cs" />
+    <Compile Include="HbmCompiler\HbmCompiler.cs" />
+    <Compile Include="HbmCompiler\HbmCompilerConsoleProgram.cs" />
+    <Compile Include="HbmCompiler\HbmCompilerConsoleProgramArgs.cs" />
+    <Compile Include="Inversion\WindsoreContainerExtensions.cs" />
+    <Compile Include="Inversion\WindsoreInversionContainer.cs" />
+    <Compile Include="Logging\Log4netILogManagerWrapper.cs" />
+    <Compile Include="Logging\Log4netIlogWraper.cs" />
+    <Compile Include="Model\Mapping\Automap.cs" />
+    <Compile Include="Model\Mapping\ClassMapExtension.cs" />
+    <Compile Include="Model\Mapping\ExtendedClassMap.cs" />
+    <Compile Include="Model\Mapping\IColumnRenamer.cs" />
+    <Compile Include="Model\Mapping\IMapTableRewriter.cs" />
+    <Compile Include="Persistence\CodeGenerator.cs" />
+    <Compile Include="Persistence\DefaultHibernatePropertyApplyerImpl.cs" />
+    <Compile Include="Persistence\HibernatePropertyApplyer.cs" />
+    <Compile Include="Persistence\HibernatePropertyApplyerImplBase.cs" />
+    <Compile Include="Persistence\HibernateStorage.cs" />
+    <Compile Include="Persistence\DataExtensions.cs" />
+    <Compile Include="Persistence\DefaultMaxVersionProvider.cs" />
+    <Compile Include="Persistence\HibernateStorageImplementator.cs" />
+    <Compile Include="Persistence\HttpContextSessionCleaner.cs" />
+    <Compile Include="Persistence\MetalinkRecord.cs" />
+    <Compile Include="Persistence\MetalinkRepository.cs" />
+    <Compile Include="Persistence\ResourceScriptRuner.cs" />
+    <Compile Include="Persistence\TemporaryReadonlySession.cs" />
+    <Compile Include="Persistence\TemporarySimpleSession.cs" />
+    <Compile Include="Persistence\TemporaryTransactionSession.cs" />
+    <Compile Include="Persistence\TestEnvironment.cs" />
+    <Compile Include="Model\Mapping\IDbSpecified.cs" />
+    <Compile Include="Persistence\ConfigurationEventArgs.cs" />
+    <Compile Include="Persistence\DefaultConfigurationProvider.cs" />
+    <Compile Include="Persistence\ConfiguringEventArgs.cs" />
+    <Compile Include="Persistence\AutomativeCurrentSessionContext.cs" />
+    <Compile Include="Persistence\DefaultSessionFactoryProvider.cs" />
+    <Compile Include="Model\Mapping\IConfigurationBoundedModel.cs" />
+    <Compile Include="Persistence\FluentNHibernateQueryExtensions.cs" />
+    <Compile Include="Persistence\HibernateInversionExtensions.cs" />
+    <Compile Include="Persistence\HibernateQuickConfigurationExtensions.cs" />
+    <Compile Include="Persistence\IAliasSetup.cs" />
+    <Compile Include="Persistence\IConfigurationProvider.cs" />
+    <Compile Include="Persistence\ICriteriaSource.cs" />
+    <Compile Include="Persistence\ICriterionSource.cs" />
+    <Compile Include="Persistence\IdCodeNameCriteria.cs" />
+    <Compile Include="Persistence\IHibernateStorage.cs" />
+    <Compile Include="Persistence\INhibernateStorageStep.cs" />
+    <Compile Include="Persistence\ISessionFactoryProvider.cs" />
+    <Compile Include="Persistence\JoinFunction.cs" />
+    <Compile Include="Persistence\SessionExtensions.cs" />
+    <Compile Include="Persistence\SqlLiteContext.cs" />
+    <Compile Include="Persistence\Utils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
+      <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
+      <Name>Comdiv.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Mapping\Conversations\Transactions\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql\MetaLink.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

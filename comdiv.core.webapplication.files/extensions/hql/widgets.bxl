@@ -1,0 +1,26 @@
+﻿global _HQLURL : "/hql/index"
+
+tab bd, "Базы данных", comment="Работа с базами данных" 
+
+button tools_hql,  "Консоль HQL", comment="Открывает консоль HQL на новой странице", image="hql/open", quick="HQ" : """
+	window.open(Ajax.siteroot+'/hql/index.rails?_layout=default', '_blank');
+"""
+
+button bd_view,  "Представление", comment="Именованное представление объектов", view="/hql/viewinput", urlregex=_HQLURL
+
+resources urlregex=_HQLURL, idx=100 : "hql"
+resources urlregex=_HQLURL, idx=110 : "hql/columneditorsbase"
+resources urlregex=_HQLURL, idx=120 : "hql/columneditors"
+ 
+button bd_hqlexecute, "Выполнить HQL", image="hql/execute", urlregex=_HQLURL, comment="Выполняет HQL-запрос в основной схеме" : """
+	zeta.hql.execute()
+"""
+button bd_applyall , "Сохранить", comment="Сохраняет все не сохраненные данные (Alt-Shift-Enter)", image="filemanager/saveall",urlregex=_HQLURL : """
+	zeta.hql.applyall()
+"""
+button bd_reverall , "Откатить", comment="Отменить все изменения (Alt-Shift-Backspace)", image="filemanager/reload" ,urlregex=_HQLURL: """
+	zeta.hql.revertall()
+"""
+
+
+

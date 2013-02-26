@@ -1,0 +1,9 @@
+﻿name : "Sql Executor"
+description : """
+	выполняет SQL- комманды относительно выбранной БД
+"""
+index
+version : "0.1.0"
+secutity : "Администратор"
+target : "Разработчики, администраторы"
+

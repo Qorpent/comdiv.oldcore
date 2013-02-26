@@ -1,0 +1,9 @@
+﻿#pragma boo
+bml:
+	div "main-toolbar-button-main" :
+		div id="sql-connection-manager" :
+			div id="sql-connection-manager-name" :
+				input id="sql_connection", size=30
+			input id="sql_connection_add", type="button", value="Создать"
+			input id="sql_connection_remove", type="button", value="Удалить"
+	div "main-toolbar-button-name" : "Подключения"

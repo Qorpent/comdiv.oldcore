@@ -1,0 +1,22 @@
+﻿#pragma boo
+import Comdiv.Persistence from Comdiv.Core
+import Comdiv.Model.Interfaces from Comdiv.Core
+defines :
+	p as HqlColumn
+	r as System.Object
+bml :	
+	try :
+		lookup = p.Property.GetValue(r,null)
+		span id="${p.Code}_${r.Id}"  :
+			if lookup :
+				"${lookup.Name}"
+		lid = 0
+		lookuptype = p.LookupType
+		if lookup :
+			lid = lookup.Id
+			lookuptype = (lookup.GetType() as System.Type).Name.Replace("Proxy","")
+		script : """
+			$('${p.Code}_${r.Id}').up().customextend = function(cell){zeta.hql.__startlookup(cell,${lid},'${lookuptype}',${p.UseCodes.ToString().ToLower()});}
+		"""
+	except :
+		output "error"

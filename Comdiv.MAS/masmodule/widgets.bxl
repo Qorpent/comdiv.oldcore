@@ -1,0 +1,25 @@
+﻿global _MASURL : "/mas/"
+global _MASHURL : "/((mas)|(hql))/"
+global _MASHFURL : "/((mas)|(hql)|(filemanager))/"
+
+
+tab aggproc, "Процессы", comment="Работа с автоматическим сбором новостей - процессы, роботы"
+
+resources urlregex=_MASHFURL, idx=200 : "mas"
+resources urlregex=_HQLURL, idx=210 : "mas/hqlextensions"
+
+
+button aggproc_processes, "Процессы", comment="Показать все процессы", urlregex=_MASHURL, image='mas/process' : """
+	if(zeta.application.controller == "hql"){
+		zeta.hql.execute('from Process order by Id desc','mas');
+	}else{
+	window.open(Ajax.siteroot+'/hql/index.rails?_layout=default&autoquery=from Process order by Id desc&autosystem=mas');
+	}
+"""
+
+button aggproc_cleanupprocesses, "Очистить", comment="Очистка успешно выполненных процессов", urlregex=_MASHURL,image='mas/clean' : """
+	zeta.mas.clean();
+"""
+widget status_currentapp , "Текущее целевое приложение", view="/mas/currentapplication", position=statusbar, idx=18
+widget status_processes , "Индикация запрошенных процессов", view="/mas/processstatus", position=statusbar, idx=20
+

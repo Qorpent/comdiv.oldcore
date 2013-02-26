@@ -1,0 +1,17 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+import Comdiv.Security.SecurityExtensions from Comdiv.Core
+defines :
+	button as Widget
+bml :
+	div "main-toolbar-button-main" :
+		div "core-security", id="core-security-table", title="${button.Comment}" :
+			input id="core-security-username", title="Укажите логин целевого пользователя", value="Логин"
+			input type="button", id="core-security-impersonate", title="Зайти от имени указанного пользователя", value="Войти"
+		div "core-security" :
+			input id="core-security-role", title="Укажите роль", value="Роль"
+			input type="button", id="core-security-test", title="Проверить наличие роли у пользователя", value="?"
+			input type="button", id="core-security-assign", title="Применить роль к пользователю", value="+"
+			input type="button", id="core-security-revoke", title="Удалить роль у пользователя", value="-"
+	
+	div "main-toolbar-button-name" : "Пользователи и роли"

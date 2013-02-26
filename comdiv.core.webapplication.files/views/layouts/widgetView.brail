@@ -1,0 +1,6 @@
+﻿#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	widget as Widget
+viewname = widget.View
+OutputSubView (viewname)

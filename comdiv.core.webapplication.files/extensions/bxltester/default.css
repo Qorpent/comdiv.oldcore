@@ -1,0 +1,54 @@
+﻿.bxl textarea   {
+	font-family : Consolas;
+	font-size: 8pt;
+	color : #0000AA;
+}
+.bxl textarea.changed {
+	border : dashed 4px blue;
+}
+.error {
+	border : solid 1px red;
+	color : #AA0000;
+}
+
+#saveresult {
+	font-size : 8pt;
+	color : green;
+}
+#saveresult.changed {
+	color : red;
+}
+#bxl_xpath , #bxl_file_name {
+	width:300px;
+}
+.bxl-auto {
+	font-size : 8pt;
+	
+}
+
+.bxl-auto {
+	border-collapse : collapse;
+}
+.bxl-auto td{
+	border : solid 1px #ccc;
+}
+
+#bxl_filelist ul {
+	list-style: none;
+	padding: 5px;
+	margin: 0px;
+	background-color: #f4f4f4;
+	
+}
+
+#bxl_filelist {
+	border: solid 1px #d7d7d7;
+	-moz-border-round: 5px;
+	border-round: 5px;
+	padding: 4px;
+	margin-top: 23px;
+}
+
+#bxl_filelist ul li {
+	
+}

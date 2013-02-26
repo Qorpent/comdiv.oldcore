@@ -1,0 +1,8 @@
+﻿#pragma boo
+defines :
+	files as (string)
+bml:
+	foreach files :
+		asulist
+		input bxl_importfile, type="checkbox", value="${i}", id="if_${i}", name="if_${i}"
+		a bxl_importfilelink, href="#" ,value="${i}" : "${i}"

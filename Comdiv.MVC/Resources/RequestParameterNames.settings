@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Comdiv.MVC.Resources" GeneratedClassName="RequestParameterNames">
+  <Profiles />
+  <Settings>
+    <Setting Name="Report_RequestKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">requestKey</Value>
+    </Setting>
+    <Setting Name="Report_KeepRequest" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">preserveRequestInSession</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

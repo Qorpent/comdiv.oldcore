@@ -1,0 +1,4 @@
+<div id="main-autocompleter" style="min-width:250px;display:none;"  class="auto_complete"></div>
+<div id="roller" style="position:fixed;display:none;">
+		    <img height="10px" src="${resx['roller.gif']}" />
+		</div>

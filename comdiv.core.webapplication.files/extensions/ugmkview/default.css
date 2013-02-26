@@ -1,0 +1,101 @@
+body {
+	font-family: "Arial";
+	font-size: 12px;
+}
+
+table {
+	margin-top: 15px;
+	padding: 3px;
+	border: solid 1px #b2b2b2;
+	border-radius: 5px;
+	-moz-border-radius : 5px;
+}
+
+table thead tr th {
+	background-color: #f2f2f2;
+	border-bottom: solid 1px #d4d4d4;
+}
+
+table tr td {
+	padding: 3px 5px 3px 5px;
+	empty-cells: show;
+	background-color: #ffffff;
+	border-bottom: dotted 1px #d4d4d4;
+}
+
+table tr th {
+	padding: 3px 5px 3px 5px;
+	empty-cells: show;
+	background-color: #ffffff;
+	border-bottom: dotted 1px #d4d4d4;
+}
+
+tr {
+	font-family: "Arial";
+	font-size: 12px;
+}
+
+input[type="button"]  {
+	padding: 1px;
+	margin-right: 1px !important;
+	font-size: 12pt;
+	cursor: pointer;
+	text-align: center;
+	font-size: 11px;
+	color: #5a5a5a;
+	padding-left : 5px;
+	padding-right: 5px;
+	padding-top : 2px;
+	padding-bottom : 2px;
+	margin-right:-3px;
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.03, rgb(255,255,255)),
+		color-stop(0.15, rgb(233,233,233)),
+		color-stop(0.7, rgb(245,245,245)),
+		color-stop(0.88, rgb(255,255,255))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,255,255) 3%,
+		rgb(233,233,233) 15%,
+		rgb(245,245,245) 70%,
+		rgb(255,255,255) 88%
+	);
+	border : solid 1px #CCCCCC;
+	-moz-border-radius : 5px;
+	border-radius : 5px;
+}
+
+input[type="button"]:hover {
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(255,246,201)),
+		color-stop(0.15, rgb(255,225,135)),
+		color-stop(0.75, rgb(255,255,168)),
+		color-stop(1, rgb(255,254,237))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(255,246,201) 0%,
+		rgb(255,225,135) 15%,
+		rgb(255,255,168) 75%,
+		rgb(255,254,237) 100%
+	);
+}
+
+.assoi_logo {
+	margin : 0px;
+	padding : 0px;
+	font-weight: bold;
+	font-size: 8pt;
+	vertical-align : middle;
+	background-image : url(logo16.png);
+	background-repeat : no-repeat;
+	padding-left : 18px;
+}
+

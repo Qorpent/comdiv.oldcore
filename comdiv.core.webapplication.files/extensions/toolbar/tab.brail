@@ -1,0 +1,8 @@
+#pragma boo
+import Comdiv.Application from Comdiv.Core
+defines :
+	widgets as WidgetCollection
+	tab as Widget
+bml :
+	div "main-toolbar-tab ${tab.SpecClass}" , id="main-toolbar-tab-${tab.Code}" , code="${tab.Code}" , title="${tab.Comment}" :
+		output "${tab.Name}"

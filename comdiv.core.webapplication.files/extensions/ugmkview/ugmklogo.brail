@@ -1,0 +1,5 @@
+﻿import Comdiv.Application from Comdiv.Core
+defines :
+	widget as Widget
+bml :
+	div "assoi_logo", title="Система сбора и обработки информации ООО 'УГМК-Холдинг'" :	"АССОИ"

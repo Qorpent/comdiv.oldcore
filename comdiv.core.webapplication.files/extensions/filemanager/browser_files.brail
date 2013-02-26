@@ -1,0 +1,23 @@
+﻿#pragma boo
+import System.IO
+defines : 
+	result as (string)
+bml:
+	table file_search_result :
+		thead :
+			tr :
+				th : "Тип"
+				th : "Имя"
+				th : "Комманды"
+		tbody :
+			for f in result :
+				ext = Path.GetExtension(f)
+				if ext.Length > 1 : 
+					ext = ext.Substring(1)
+				tr id="tr_${f}" :
+					td "file_type ${ext}" :
+						output "${ext}"
+					td "file_name" :
+						a href="#", onclick="zeta.files.editor.activate('${f}')" : "${f} "
+					td : 
+						div "delete_button", onclick="zeta.files.editor.deletefile('${f}')": "Удалить"

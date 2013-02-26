@@ -1,0 +1,11 @@
+textarea.__with_line_numbers {
+	padding-left : 50px;
+}
+div.__line_numbers {
+	width:45px;
+	border-right : solid 1px gray;
+	background-color : #eeeeee;
+	position:absolute;
+	-moz-user-select : none;
+	-webkit-user-select : none;
+}

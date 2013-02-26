@@ -1,0 +1,7 @@
+﻿name : "Библиотеки NHibernate"
+description : """
+	Библиотеки поддержки NHibernate в приложении
+"""
+version : "0.1.0"
+secutity : "Общий"
+target : "Внутренняя среда приложения"

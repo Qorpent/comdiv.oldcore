@@ -1,0 +1,9 @@
+﻿<div id="file_zone">
+**upload
+**execForm
+<%for f in folders :
+	v === f.CustomView , "folder" 
+	OutputSubView(v,{@files:f.GetFiles()})
+end%>
+**js
+</div>

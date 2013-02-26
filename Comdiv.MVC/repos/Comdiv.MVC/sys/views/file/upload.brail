@@ -1,0 +1,9 @@
+﻿<%#fluent%>
+<form id="upload_form" action="${siteroot}/file/upload.rails" enctype="multipart/form-data" method="post" >
+	<input type="hidden" name="asworkspace" value="1"/>
+	<table>
+		<tr><td>Файл</td><td><input type="file" name="file" /></td></tr>
+		<tr><td>Новое имя</td><td><input id="upload_name" type="text" name="name" /></td></tr>
+		<tr><td>${jsref("$('upload_form').submit()","Отправить")}</td><td></td></tr>
+	</table>
+</form>

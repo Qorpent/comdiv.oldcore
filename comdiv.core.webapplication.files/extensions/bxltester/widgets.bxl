@@ -1,0 +1,10 @@
+﻿resources urlregex='bxltester/index' : "bxltester"
+tab dev, "Разработка", roles="DEVELOPER", comment="Инструменты для разработчика системы"
+button tools_bxleditor , roles="DEVELOPER",  "Редактор BXL", comment="Защищенная среда для отладки BXL" , image="bxltester/editor" : """
+	window.open(Ajax.siteroot + '/bxltester/index.rails?_layout=default', '_blank');
+"""
+button dev_bxl_autocompile,roles="DEVELOPER",  "Автокомпиляция BXL", view="/bxltester/autocompile" , urlregex='bxltester/index'
+button dev_bxl_compile_xml,roles="DEVELOPER",  "Parse", comment="Преобразовать в XML", image="bxltester/xml" , urlregex='bxltester/index' : "zeta.bxl.parse();"
+button dev_bxl_compile_bxl,roles="DEVELOPER",  "Smart", comment="Преобразовать в BXL с использованием расширенных элементов языка", image="bxltester/bxl" , urlregex='bxltester/index' : "zeta.bxl.smart();"
+button dev_bxl_compile_themas,roles="DEVELOPER",  "Thema", comment="Преобразовать в файл определения тем", image="bxltester/themas" , urlregex='bxltester/index' : "zeta.bxl.themas();"
+

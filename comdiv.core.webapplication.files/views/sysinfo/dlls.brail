@@ -1,0 +1,15 @@
+﻿#pragma boo
+import System.Reflection
+defines :
+	result as (Assembly)
+bml :
+	foreach i=result :
+		astable "sysinfo dlls" :
+			heads  "Имя", "База"
+			cell :
+				output i.GetName().Name 
+			cell :
+				if i.IsDynamic :
+					output "dynamic"
+				else :
+					output i.CodeBase

@@ -1,0 +1,41 @@
+﻿<table class="ws-partitions">
+	    <tr>
+	        <td id="top" colspan="3" valign="top">  
+				<table class="ws-partitions-section">
+				    <tr>
+				        <%OutputSubView('/shared/partitions',{@role:@top,@itemStart:'<td valign="top" class="ws-part">',@itemEnd:'</td>'}) %>
+				    </tr>
+				</table>
+			</td>
+	    </tr>
+		<tr>
+			<td  valign="top" id="left">
+			    <table class="ws-partitions-section">
+			    <%OutputSubView('/shared/partitions',{@role:@left,@itemStart:'<tr class="ws-part"><td class="ws-part">',@itemEnd:'</td></tr>'}) %>
+			    </table>
+			</td>
+			<td valign="top" id="main">
+		        <div id="maincontent">			    
+		                <%OutputSubView('/shared/partitions',{@role:@header,@itemStart:'<div class="ws-part">',@itemEnd:'</div>'}) %>
+			            ${content}
+			            <%OutputSubView('/shared/partitions',{@role:@footer,@itemStart:'<div class="ws-part">',@itemEnd:'</div>'}) %>
+			            <%OutputSubView('/shared/partitions',{@role:@main, @itemStart:'<div class="ws-part">',@itemEnd:'</div>'}) %>
+			    </div>
+		    </td>
+			<td id="right" valign="top" class="ws-partitions-section">
+		        <table>
+			    <%OutputSubView('/shared/partitions',{@role:@right,@itemStart:'<tr class="ws-part"><td class="ws-part">',@itemEnd:'</td></tr>'}) %>
+			    </table>
+			</td>
+		</tr>
+
+        <tr>
+            <td colspan="3" valign="top" id="bottom" class="ws-partitions-section">
+            <table>
+				    <tr>
+				        <%OutputSubView('/shared/partitions',{@role:@bottom,@itemStart:'<td class="ws-part">',@itemEnd:'</td>'}) %>
+				    </tr>
+				</table>
+            </td>
+        </tr>
+	</table>

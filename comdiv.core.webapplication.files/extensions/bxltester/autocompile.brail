@@ -1,0 +1,17 @@
+﻿#pragma boo
+bml:
+	div "main-toolbar-button-main" :
+		table "bxl-auto":
+			tr :
+				td : "XML"
+				td : "BXL"
+				td : "Thm"
+			tr :
+				td : 
+					input bxl_auto, type='checkbox', id='autoparse', value='parse' 
+				td :
+					input bxl_auto, type='checkbox', id='autosmart' , value='smart'
+				td :
+					input bxl_auto, type='checkbox', id='autothemas', value='themas'
+
+	div "main-toolbar-button-name" : "Автокомпиляция"

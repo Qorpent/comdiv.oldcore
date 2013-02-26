@@ -1,0 +1,197 @@
+﻿#pragma boo
+import Comdiv.Persistence from Comdiv.Core
+import System.Reflection
+import System.Collections
+import Comdiv.Controllers
+import System.Linq.Enumerable from System.Core
+import System.Linq.Enumerable from System.Core as e
+import Comdiv.Model.Interfaces from Comdiv.Core
+import System.Linq.Enumerable
+import System.Text.RegularExpressions
+defines :
+	result as IEnumerable[of System.Object]
+	columns as Dictionary[of string, Comdiv.Persistence.HqlColumn]
+	type as string
+	usefields as bool
+	useid as bool
+	ididx as int = -1
+	fields as (string)
+	system as string
+	nosetquery as bool
+	multiple as bool 
+	results as IList[of HqlResult]
+	idx as string
+
+def getcol( p as PropertyInfo)  as Comdiv.Persistence.HqlColumn :
+	result as Comdiv.Persistence.HqlColumn
+	if columns.ContainsKey(p.Name) :
+		result = columns[p.Name]
+	else :
+		result = Comdiv.Persistence.HqlColumn()
+		result.Idx = 500
+		result.Code = p.Name
+		result.Name = p.Name
+		result.Editable = true
+		result.Hidden = false
+	result.Property = p
+	return result
+bml :
+	if multiple :
+		c = 0
+		for r in results :
+			OutputSubView("execute",{@multiple:false,@results:null,@result:r.Items,@columns : r.Columns,@type :r.Entity,@idx:"${c}"})
+			c++
+		return
+	
+	if result.Count() == 0 :
+		p : "Результатов нет"
+	else :
+		first = result.First()
+		mode = "class"
+		entityname = "${Regex('Proxy.*$').Replace((first.GetType() as System.Type).Name,'')}"
+		if first isa (System.Object) :
+			mode = "array"
+		elif (first.GetType())==typeof(string) or (first.GetType() as System.Type).IsValueType :
+			mode = "scalar"
+		div style="clear:both"
+		div hql_table :
+			if mode == "scalar" :
+				foreach result :
+					astable :
+						head :
+							"Значение"
+						cell : 
+							"${i}"
+			elif mode == "array" :
+				arr = first as (System.Object)
+				table id="hqlresulttable${idx}", entity="${type}", system="${system}" , cellspacing="0", cellpadding="1":
+					if usefields :
+						for f in fields :
+							editable = f!="Id"
+							output "<col code='${f}' editable='${editable}'/>"
+					thead :
+						tr :
+							c = 0
+							while c < (first.Length) :
+								if usefields :
+									th : "${fields[c]}"
+								else :
+									th : c
+								c++
+					tbody :
+						
+						for a as (System.Object) in result :
+							if useid :
+								tr entityid = "${a[ididx]}":
+									c = 0
+									for i in a :
+										td "editable_${c!=ididx}" : "${i}"
+										c++
+							else :
+								tr :
+									for i in a :
+										td : "${i}"
+							
+			else :
+				props = e.Where((first.GetType() as System.Type).GetProperties(),{x|((x.PropertyType as System.Type).IsValueType or x.PropertyType==typeof(string) or not (typeof(System.Collections.IEnumerable) as System.Type).IsAssignableFrom(x.PropertyType)) and not (x.Name.Contains('HibernateLazyInitializer')) } ).Select({x|getcol(x)}).OrderBy({x|x.Idx}).ToArray()
+				table id="hqlresulttable${idx}", entity="${type}", cellspacing="0", cellpadding="1" :
+					for p in props :
+						if p.Hidden : 
+							continue
+						output "<col code='${p.Code}' editable='${p.Editable}' propcode='${p.Code}'/>"
+					thead :
+						tr :
+							th :
+								div "hql-add-record", onclick="new comdiv.modal.editobject('Добавляем строку', { code: '', name: '', __dialog: { height: 100, width: 270 }, __fields: { code: {name: 'Код', size: '200'}, name: {name: 'Имя', size: '200'} }}, function(obj) { zeta.hql.addrecord(obj.code, obj.name) } )" : 
+									output "+"
+							for p in props :
+								if p.Hidden : 
+										continue 
+								th title="${p.Comment} (${p.Code})": "${p.Name}"
+					tbody :
+						for r in result :
+							tr entityid="${(r as IWithId).Id}", id="hql_tr_${entityname}_${(r as IWithId).Id}" :
+								th "menuzone" , oncontextmenu="zeta.hql.onmenu(event, ${(r as IWithId).Id}, '${entityname}'  );return false;" : "&nbsp;"
+								for p in props :
+									if p.Hidden : 
+										continue
+									td "${p.CssClass} editable_${p.Editable}" , style= "${p.CssStyle}":
+										if p.View :
+											OutputSubView(p.View,{@p:p,@r:r,@type:type})
+										elif p.Property.PropertyType == typeof(bool):
+											OutputSubView("boolcolumn",{@p:p,@r:r,@type:type})
+										elif p.Property.PropertyType.IsEnum:
+											OutputSubView("enumcolumn",{@p:p,@r:r,@type:type})
+										else :
+											
+											try :	
+												val = p.Property.GetValue(r, null)
+												if(val isa System.DateTime) :
+													dt = cast(System.DateTime,val)
+													if dt.Date == dt :
+														val = cast(System.DateTime,val).ToString("dd.MM.yyyy")
+													else :
+														val = cast(System.DateTime,val).ToString("dd.MM.yyyy hh:mm:ss")
+												if p.IsRef :
+													id_ = System.Guid.NewGuid().ToString()
+													a href="${p.Property.GetValue(r, null)}", id="${id_}", target="_blank" : "${val}"
+												else :
+													"${val}"
+											except:
+												output "error"
+			
+			
+			div id="_query${idx}", style="display:none;" :
+				output query
+			script : """
+				
+				if($('hqlresulttable${idx}')){
+					
+					new zeta.components.inplacetable($('hqlresulttable${idx}'),{
+						oncheckcell : function(cell){
+							cell= $(cell);
+							if(cell.customextend){
+								return cell.customextend(zeta.tableutils.extendcell($(cell)));
+							}
+							return zeta.tableutils.extendcell($(cell)).evalAttr('editable') == 'True';
+						},
+						onapply: zeta.hql.__processcell
+					});
+				}
+				
+				zeta.hql.preparecutomedits();
+				
+				$$('.editable_True').each(function(cell){
+					if(!cell.customedit){
+						cell.revert = function(e){
+							e.removeClassName('inchangemode');
+							e.editor = null;
+							e.div =null;
+							if(e.oldvalue){
+								e.update(e.oldvalue);
+							}
+						}
+						cell.apply = function(e){
+							e.removeClassName('inchangemode');
+							value = e.down('input').value;
+							zeta.tableutils.extendcell(e);
+							e.oldvalue =value;
+							e.update(value);
+							e.editor = null;
+							e.div =null;
+							zeta.hql.update(
+										e.evalAttr('entity'),
+										e.evalAttr('entityid'),
+										e.evalAttr('propcode'),
+										value
+							);
+						}
+					}
+				});
+				
+			"""	
+			if not nosetquery :
+				script : """
+					$('hql_query').value = $('_query${idx}').textContent;
+				"""
+		
