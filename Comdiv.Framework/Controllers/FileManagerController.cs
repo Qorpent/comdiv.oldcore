@@ -82,6 +82,7 @@ namespace Comdiv.Controllers
             RenderText(sw.ToString().toHtml());
         }
 
+        [Admin]
 		public void render(string file) {
 			var fname = myapp.files.Resolve("~/" + file, true);
 			if (fname.hasContent()) {
