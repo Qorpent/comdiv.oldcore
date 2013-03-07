@@ -65,34 +65,6 @@
   </PropertyGroup>
   <ItemGroup Condition="'$(Configuration)'=='MIGRATION'">
     <Reference Include="System.Web" />
-    <Reference Include="Boo.Lang.Extensions">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib2\\Boo.Lang.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Boo.Lang">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib2\\Boo.Lang.dll</HintPath>
-    </Reference>
-    <Reference Include="Boo.Lang.Compiler">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib2\\Boo.Lang.Compiler.dll</HintPath>
-    </Reference>
-    <Reference Include="Boo.Lang.Interpreter">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib2\\Boo.Lang.Interpreter.dll</HintPath>
-    </Reference>
-    <Reference Include="Boo.Lang.Parser">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib2\\Boo.Lang.Parser.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Scripting">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib2\\Microsoft.Scripting.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Scripting.Core">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib2\\Microsoft.Scripting.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -101,10 +73,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="IronPython">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib2\\IronPython.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -320,11 +288,11 @@
     <Compile Include="SetupDefaultNamespacesAndReferencesStep.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Bxl\Qorpent.Bxl.csproj">
+    <ProjectReference Include="..\..\qorpent.sys\Qorpent.Bxl\Qorpent.Bxl.csproj">
       <Project>{381DEC86-5709-4A64-BD9F-462E792884CE}</Project>
       <Name>Qorpent.Bxl</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Qorpent\qorpent.sys\Qorpent.Core\Qorpent.Core.csproj">
+    <ProjectReference Include="..\..\qorpent.sys\Qorpent.Core\Qorpent.Core.csproj">
       <Project>{880F65EA-1A22-4672-A137-FFC91290A209}</Project>
       <Name>Qorpent.Core</Name>
     </ProjectReference>
@@ -334,6 +302,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Boo.Lang">
+      <HintPath>..\..\oldextra\lib\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Compiler">
+      <HintPath>..\..\oldextra\lib\Boo.Lang.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Extensions">
+      <HintPath>..\..\oldextra\lib\Boo.Lang.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Interpreter">
+      <HintPath>..\..\oldextra\lib\Boo.Lang.Interpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang.Parser">
+      <HintPath>..\..\oldextra\lib\Boo.Lang.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython">
+      <HintPath>..\..\oldextra\lib\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>..\..\oldextra\lib\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Core">
+      <HintPath>..\..\oldextra\lib\Microsoft.Scripting.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
