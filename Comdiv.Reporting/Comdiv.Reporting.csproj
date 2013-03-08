@@ -137,10 +137,6 @@
       <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
       <Name>Comdiv.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Comdiv.Useful\Comdiv.Useful.csproj">
-      <Project>{DDA796A7-3440-4D9E-9E3F-99B97B169332}</Project>
-      <Name>Comdiv.Useful</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="comdiv.core.snk" />
