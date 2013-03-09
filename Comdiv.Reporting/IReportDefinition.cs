@@ -37,8 +37,4 @@ namespace Comdiv.Reporting{
         void CleanupParameters(IPrincipal principal);
         void CheckReportLive();
     }
-
-    public interface IReportDefinitionExtension{
-        void Contextualize(IReportDefinition definition);
-    }
 }

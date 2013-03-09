@@ -82,6 +82,7 @@
     <Compile Include="IReportDefinition.cs" />
     <Compile Include="IReportDefinitionCacheStringProvider.cs" />
     <Compile Include="IReportDefinitionDynamicView.cs" />
+    <Compile Include="IReportDefinitionExtension.cs" />
     <Compile Include="IReportOutputFormat.cs" />
     <Compile Include="IReportOutputProcessor.cs" />
     <Compile Include="IReportProcessor.cs" />
