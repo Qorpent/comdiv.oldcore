@@ -208,7 +208,10 @@
     <Compile Include="Model\IMetadataProviderFactory.cs" />
     <Compile Include="Model\Interfaces\IAttachment.cs" />
     <Compile Include="Model\Interfaces\IAttachmentRepository.cs" />
+    <Compile Include="Model\Interfaces\IPseudoThema.cs" />
     <Compile Include="Model\Interfaces\IWithAttachments.cs" />
+    <Compile Include="Model\Interfaces\IWithControllerDefinition.cs" />
+    <Compile Include="Model\Interfaces\IWithGetParameter.cs" />
     <Compile Include="Model\Interfaces\IWithRange.cs" />
     <Compile Include="Model\Interfaces\IWithRoles.cs" />
     <Compile Include="Model\Interfaces\IWithUsr.cs" />

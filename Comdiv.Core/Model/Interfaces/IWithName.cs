@@ -15,19 +15,10 @@
 // 
 // MODIFICATIONS HAVE BEEN MADE TO THIS FILE
 namespace Comdiv.Model.Interfaces{
+	/// <summary>
+	/// Интерфейс именованного объекта
+	/// </summary>
     public interface IWithName{
         string Name { get; set; }
-    }
-
-	public interface IWithGetParameter {
-		object GetParameter(string name);
-	}
-
-	public interface IPseudoThema : IWithCode, IWithName, IWithGetParameter {} ;
-
-    public interface IWithControllerDefinition{
-        string Action { get; set; }
-        string Controller { get; set; }
-        string Area { get; set; }
     }
 }
