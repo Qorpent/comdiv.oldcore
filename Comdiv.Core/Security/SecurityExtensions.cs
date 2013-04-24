@@ -99,8 +99,8 @@ namespace Comdiv.Security{
             return resolver.IsInRole(user, "ADMIN");
         }
 
-          public static bool IsInRole(this IRoleResolver resolver, string role, bool adminanyrole = true ){
-            return resolver.IsInRole(getCurrent(), role,adminanyrole);
+          public static bool IsInRole(this IRoleResolver resolver, string role, bool exact = false ){
+            return resolver.IsInRole(getCurrent(), role,exact);
         }
 
         public static IEnumerable<string> GetRoles(this IRoleResolver resolver, bool donotproceedifadmin = true){

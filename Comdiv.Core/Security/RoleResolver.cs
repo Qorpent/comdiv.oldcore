@@ -46,7 +46,11 @@ namespace Comdiv.Security{
         #region IRoleResolver Members
 
         public bool IsInRole(IPrincipal principal, string role, bool adminisanyrole = true){
-            lock (this){
+            lock (this) {
+	            if (string.IsNullOrWhiteSpace(role)) return true;
+				if (null == principal) {
+					principal = myapp.principals.CurrentUser;
+				}
                 if (log.IsDebugEnabled){
                     log.Debug("start check role " + role + " for " + principal.Identity.Name);
                 }
