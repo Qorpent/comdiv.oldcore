@@ -10,6 +10,11 @@ using Comdiv.Security;
 
 namespace Comdiv.MVC.Controllers
 {
+
+
+
+
+
     public delegate bool FuncMessageToBool (IMessage message);
     public delegate IUserRecord FuncMessageToUsrRecord(IMessage message);
     [Public]
