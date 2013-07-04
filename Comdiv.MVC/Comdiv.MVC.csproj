@@ -86,7 +86,7 @@
     </Reference>
     <Reference Include="Comdiv.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\zeta\themacompiler\bin\Debug\Comdiv.Messaging.dll</HintPath>
+      <HintPath>..\..\cm\cm\bin\Comdiv.Messaging.dll</HintPath>
     </Reference>
     <Reference Include="FluentNHibernate, Version=0.1.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880">
       <SpecificVersion>False</SpecificVersion>

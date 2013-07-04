@@ -118,10 +118,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\exras\lib\\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\exras\lib\\NHibernate.ByteCode.Castle.dll</HintPath>
-    </Reference>
     <Reference Include="Npgsql">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\exras\lib\\Npgsql.dll</HintPath>
@@ -204,10 +200,6 @@
       <Project>{529145d5-6cc3-4016-89b5-826563024af1}</Project>
       <Name>FluentNHibernate</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\exras\lib\fluent-nhibernate\src\FluentNHibernate\FluentNHibernate.csproj">
-      <Project>{529145d5-6cc3-4016-89b5-826563024af1}</Project>
-      <Name>FluentNHibernate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Comdiv.Core\Comdiv.Core.csproj">
       <Project>{C51304FD-0406-48E0-833E-EEDC67425BC8}</Project>
       <Name>Comdiv.Core</Name>
@@ -221,6 +213,10 @@
     <EmbeddedResource Include="Sql\MetaLink.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=1.3.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\exras\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Qorpent.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9b7e542f177f0300, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\zeta\zeta\Bin\Qorpent.Core.dll</HintPath>
